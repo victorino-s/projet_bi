@@ -1,0 +1,123 @@
+DECLARE 
+  existe_bonbon INTEGER ;
+
+BEGIN 
+  SELECT count(*) INTO existe_bonbon FROM user_tables WHERE table_name = upper('bonbon') ;
+
+  IF existe_bonbon > 0 THEN 
+    EXECUTE IMMEDIATE 'DROP TABLE bonbon CASCADE CONSTRAINTS' ;
+
+  END IF ;
+
+END ;
+
+CREATE TABLE bonbon (bonbon_id INT NOT NULL,
+bonbon_type ENUM,
+bonbon_couleur ENUM,
+bonbon_variante ENUM,
+bonbon_texture ENUM,
+bonbon_conditionnement ENUM,
+bonbon_prix FLOAT,
+recette_id **NOT FOUND**,
+PRIMARY KEY (bonbon_id));
+
+
+CREATE SEQUENCE SEQ_bonbon ;
+
+CREATE TRIGGER TRIG_bonbon BEFORE INSERT ON bonbon FOR EACH ROW 
+ BEGIN 
+ SELECT SEQ_bonbon.NEXTVAL INTO :new.bonbon_id FROM DUAL ;
+
+ END ;
+
+DECLARE 
+  existe_recette INTEGER ;
+
+BEGIN 
+  SELECT count(*) INTO existe_recette FROM user_tables WHERE table_name = upper('recette') ;
+
+  IF existe_recette > 0 THEN 
+    EXECUTE IMMEDIATE 'DROP TABLE recette CASCADE CONSTRAINTS' ;
+
+  END IF ;
+
+END ;
+
+CREATE TABLE recette (recette_id INT NOT NULL,
+recette_additif INT,
+recette_enrobage INT,
+recette_arome INT,
+recette_sucre INT,
+recette_gelifiant_recette INT,
+PRIMARY KEY (recette_id));
+
+
+CREATE SEQUENCE SEQ_recette ;
+
+CREATE TRIGGER TRIG_recette BEFORE INSERT ON recette FOR EACH ROW 
+ BEGIN 
+ SELECT SEQ_recette.NEXTVAL INTO :new.recette_id FROM DUAL ;
+
+ END ;
+
+DECLARE 
+  existe_commande INTEGER ;
+
+BEGIN 
+  SELECT count(*) INTO existe_commande FROM user_tables WHERE table_name = upper('commande') ;
+
+  IF existe_commande > 0 THEN 
+    EXECUTE IMMEDIATE 'DROP TABLE commande CASCADE CONSTRAINTS' ;
+
+  END IF ;
+
+END ;
+
+CREATE TABLE commande (commande_id_commande INT NOT NULL,
+commande_num_commande INT,
+commande_quantite INT,
+commande_tarif FLOAT,
+pays_id **NOT FOUND**,
+bonbon_id **NOT FOUND**,
+PRIMARY KEY (commande_id_commande));
+
+
+CREATE SEQUENCE SEQ_commande ;
+
+CREATE TRIGGER TRIG_commande BEFORE INSERT ON commande FOR EACH ROW 
+ BEGIN 
+ SELECT SEQ_commande.NEXTVAL INTO :new.commande_id_commande FROM DUAL ;
+
+ END ;
+
+DECLARE 
+  existe_pays INTEGER ;
+
+BEGIN 
+  SELECT count(*) INTO existe_pays FROM user_tables WHERE table_name = upper('pays') ;
+
+  IF existe_pays > 0 THEN 
+    EXECUTE IMMEDIATE 'DROP TABLE pays CASCADE CONSTRAINTS' ;
+
+  END IF ;
+
+END ;
+
+CREATE TABLE pays (pays_id INT NOT NULL,
+pays_nom ENUM,
+pays_transport ENUM,
+PRIMARY KEY (pays_id));
+
+
+CREATE SEQUENCE SEQ_pays ;
+
+CREATE TRIGGER TRIG_pays BEFORE INSERT ON pays FOR EACH ROW 
+ BEGIN 
+ SELECT SEQ_pays.NEXTVAL INTO :new.pays_id FROM DUAL ;
+
+ END ;
+
+ALTER TABLE bonbon ADD CONSTRAINT FK_bonbon_recette_id FOREIGN KEY (recette_id) REFERENCES recette (recette_id);
+
+ALTER TABLE commande ADD CONSTRAINT FK_commande_pays_id FOREIGN KEY (pays_id) REFERENCES pays (pays_id);
+ALTER TABLE commande ADD CONSTRAINT FK_commande_bonbon_id FOREIGN KEY (bonbon_id) REFERENCES bonbon (bonbon_id);
