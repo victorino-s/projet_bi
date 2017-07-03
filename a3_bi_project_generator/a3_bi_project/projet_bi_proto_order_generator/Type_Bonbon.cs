@@ -13,5 +13,11 @@ namespace projet_bi_proto_order_generator
             this.name = data.nom;
         }
         public string name { get; set; }
+
+        public string couleur { get; set; }
+
+        public Variante variante { get; set; }
+
+        public string texture { get; set; }
     }
 }

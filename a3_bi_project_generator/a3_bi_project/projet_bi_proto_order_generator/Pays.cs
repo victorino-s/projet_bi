@@ -12,6 +12,9 @@ namespace projet_bi_proto_order_generator
         public Pays(dynamic data)
         {
             this.name = data.nom;
+            this.transport = data.transport;
         }
+
+        public Transport transport { get; set; }
     }
 }

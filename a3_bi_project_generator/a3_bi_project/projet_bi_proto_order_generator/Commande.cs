@@ -23,6 +23,16 @@ namespace projet_bi_proto_order_generator
 
         public float prix_lots { get; set; }
 
+        public DateTime date_commande { get; set; }
+
+        public DateTime date_expedition { get; set; }
+
+        public DateTime date_fabrication{ get; set; }
+
+        public DateTime date_conditionnement{ get; set; }
+
+
+        public bool etat { get; set; }
         //public int no_colis { get; set; } ??????
     }
 }

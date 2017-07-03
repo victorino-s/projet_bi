@@ -63,6 +63,7 @@ namespace projet_bi_proto_order_generator
 
                     _commande.id = i*10+n; // TEMP ID
                     _commande.type_bonbon = types_bonbon_config[randomType];
+                    _commande.type_bonbon.variante = variantes_config[randomVariante];
                     _commande.conditionnement = conditionnements_config[randomConditionnement];
                     _commande.quantite = quantite;
                     _commande.pays_destination = pays_config[randomPays];
