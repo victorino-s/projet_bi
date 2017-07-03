@@ -1,0 +1,109 @@
+﻿{
+  "conditionnements": [
+    {"nom": "sachet", "quantite": 10},
+    {"nom": "boite", "quantite": 25},
+    {"nom": "echantillon", "quantite": 1}
+  ],
+  "types_bonbon": [
+    "Acidofilo",
+    "Bouteille Cola",
+    "Brazil Pik",
+    "Color Schtroumpf Pik",
+    "Langues Acides",
+    "London Pik",
+    "Miami Pik",
+    "Pasta Basta",
+    "Pasta Frutta",
+    "Sour Snup",
+    "Dragibus",
+    "Carensac",
+    "Fraizibus",
+    "Grain de millet",
+    "Starmint",
+    "Florent Violette",
+    "Kimono",
+    "Pain Zan",
+    "Rotella",
+    "Zanoïd",
+    "Fraise Tagada",
+    "Croco",
+    "Chamallows",
+    "Polka",
+    "Banane",
+    "Ourson",
+    "Filament"
+  ],
+  "textures": [
+    "mou",
+    "dur"
+  ],
+  "variantes": [
+    "acide",
+    "sucre",
+    "gelifie"
+  ],
+  "couleurs_bonbons": [
+    "rouge",
+    "orange",
+    "jaune",
+    "vert",
+    "bleu",
+    "violet",
+    "noir",
+    "marron"
+  ],
+  "pays": [
+    "Allemagne",
+    "Autriche",
+    "Belgique",
+    "Bulgarie",
+    "Chypre",
+    "Croatie",
+    "Danemark",
+    "Espagne",
+    "Estonie",
+    "Finlande",
+    "France",
+    "Grèce",
+    "Hongrie",
+    "Irelande",
+    "Italie",
+    "Lettonie",
+    "Lituanie",
+    "Luxembourg",
+    "Malte",
+    "Pays-Bas",
+    "Pologne",
+    "Portugal",
+    "République Tchèque",
+    "Roumanie",
+    "Royaume-Uni",
+    "Slovaquie",
+    "Slovénie",
+    "Suède",
+    "USA",
+    "Canada",
+    "Mexique",
+    "Japon",
+    "Chine",
+    "Afrique du Sud"
+  ],
+  "transports": [
+    {
+      "nom": "camion",
+      "qte_palette": 33,
+      "qte_carton_palette": 40
+    },
+    {
+      "nom": "bateau",
+      "qte_palette": 60,
+      "qte_carton_palette": 30
+    },
+    {
+      "nom": "avion",
+      "qte_palette": 20,
+      "qte_carton_palette": 20
+    }
+
+  ]
+}
