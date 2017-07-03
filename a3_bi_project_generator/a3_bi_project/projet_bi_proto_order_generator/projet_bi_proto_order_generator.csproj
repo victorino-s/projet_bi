@@ -1,13 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{8E8A66AF-C987-402B-B6C3-9D67D71D73CB}</ProjectGuid>
+    <ProjectGuid>{D756C655-E20E-40BC-8AC1-CB31EC12FE4C}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>OrcDbFiller</RootNamespace>
-    <AssemblyName>OrcDbFiller</AssemblyName>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>projet_bi_proto_order_generator</RootNamespace>
+    <AssemblyName>projet_bi_proto_order_generator</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -34,6 +35,7 @@
   <ItemGroup>
     <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -45,22 +47,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Candy.cs" />
-    <Compile Include="DataGenerator.cs" />
-    <Compile Include="JsonFileContentObj.cs" />
-    <Compile Include="OracleDataFiller.cs" />
-    <Compile Include="Order.cs" />
+    <Compile Include="Commande.cs" />
+    <Compile Include="Conditionnement.cs" />
+    <Compile Include="Pays.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Type_Bonbon.cs" />
+    <Compile Include="Variante.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
-    <None Include="_local_data\conditionnements_bonbons.json" />
-    <None Include="couleurs_bonbons.json" />
+    <None Include="_local_data\config.json" />
     <None Include="_local_data\styles_bonbons.json" />
-    <None Include="_local_data\textures_bonbons.json" />
-    <None Include="_local_data\variantes_bonbons.json" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
 </Project>

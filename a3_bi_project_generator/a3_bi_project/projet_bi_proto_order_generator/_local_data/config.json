@@ -1,0 +1,227 @@
+﻿{
+  "nb_commandes": 5,
+  "lots_min": 1,
+  "lots_max": 10,
+  "conditionnements": [
+    {
+      "nom": "Boite",
+      "machines_compatibles": "",
+      "couts_conditionnement": 0,
+      "qte_bonbon": 25
+    },
+    {
+      "nom": "Sachet",
+      "machines_compatibles": "",
+      "couts_conditionnement": 0,
+      "qte_bonbon": 10
+    },
+    {
+      "nom": "Echantillon",
+      "machines_compatibles": "",
+      "couts_conditionnement": 0,
+      "qte_bonbon": 3
+    }
+  ],
+  "types_bonbon": [
+    {
+      "nom": "Acidofilo"
+      // On peut imaginer qu'on lie l'objet à toutes ses caractéristiques
+    },
+    {
+      "nom": "Bouteille Cola"
+    },
+    {
+      "nom": "Brazil Pik"
+    },
+    {
+      "nom": "Color Schtroumpf Pik"
+    },
+    {
+      "nom": "Langues Acides"
+    },
+    {
+      "nom": "London Pik"
+    },
+    {
+      "nom": "Miami Pik"
+    },
+    {
+      "nom": "Pasta Basta"
+    },
+    {
+      "nom": "Pasta Frutta"
+    },
+    {
+      "nom": "Sour Snup"
+    },
+    {
+      "nom": "Dragibus"
+    },
+    {
+      "nom": "Carensac"
+    },
+    {
+      "nom": "Fraizibus"
+    },
+    {
+      "nom": "Grain de millet"
+    },
+    {
+      "nom": "Starmint"
+    },
+    {
+      "nom": "Florent Violette"
+    },
+    {
+      "nom": "Kimono"
+    },
+    {
+      "nom": "Pain Zan"
+    },
+    {
+      "nom": "Rotella"
+    },
+    {
+      "nom": "Zanoïd"
+    },
+    {
+      "nom": "Fraise Tagada"
+    },
+    {
+      "nom": "Croco"
+    },
+    {
+      "nom": "Chamallows"
+    },
+    {
+      "nom": "Polka"
+    },
+    {
+      "nom": "Banane"
+    },
+    {
+      "nom": "Ourson"
+    },
+    {
+      "nom": "Filament"
+    }
+  ],
+  "variantes": [
+    {
+      "nom": "Acide",
+      "machines_compatible": []
+    },
+    {
+      "nom": "Sucre",
+      "machines_compatible": []
+    },
+    {
+      "nom": "Gelifie",
+      "machines_compatible": []
+    }
+  ],
+  "pays": [
+    {
+      "nom": "Allemagne"
+    },
+    {
+      "nom": "Autriche"
+    },
+    {
+      "nom": "Belgique"
+    },
+    {
+      "nom": "Bulgarie"
+    },
+    {
+      "nom": "Chypre"
+    },
+    {
+      "nom": "Croatie"
+    },
+    {
+      "nom": "Danemark"
+    },
+    {
+      "nom": "Espagne"
+    },
+    {
+      "nom": "Estonie"
+    },
+    {
+      "nom": "Finlande"
+    },
+    {
+      "nom": "France"
+    },
+    {
+      "nom": "Grece"
+    },
+    {
+      "nom": "Hongrie"
+    },
+    {
+      "nom": "Irelande"
+    },
+    {
+      "nom": "Italie"
+    },
+    {
+      "nom": "Lettonie"
+    },
+    {
+      "nom": "Lituanie"
+    },
+    {
+      "nom": "Luxembourg"
+    },
+    {
+      "nom": "Malte"
+    },
+    {
+      "nom": "Pays-Bas"
+    },
+    {
+      "nom": "Pologne"
+    },
+    {
+      "nom": "Portugal"
+    },
+    {
+      "nom": "Republique Tchèque"
+    },
+    {
+      "nom": "Roumanie"
+    },
+    {
+      "nom": "Royaume-Uni"
+    },
+    {
+      "nom": "Slovaquie"
+    },
+    {
+      "nom": "Slovenie"
+    },
+    {
+      "nom": "Suede"
+    },
+    {
+      "nom": "USA"
+    },
+    {
+      "nom": "Canada"
+    },
+    {
+      "nom": "Mexique"
+    },
+    {
+      "nom": "Japon"
+    },
+    {
+      "nom": "Chine"
+    },
+    {
+      "nom": "Afrique du Sud"
+    }
+  ]
+}

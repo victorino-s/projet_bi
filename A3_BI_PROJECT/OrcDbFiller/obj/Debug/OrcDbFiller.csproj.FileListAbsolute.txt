@@ -1,8 +1,0 @@
-D:\_CodeFiles\_VS\_CPP\cpp_book\A3_BI_PROJECT\OrcDbFiller\bin\Debug\OrcDbFiller.exe.config
-D:\_CodeFiles\_VS\_CPP\cpp_book\A3_BI_PROJECT\OrcDbFiller\bin\Debug\OrcDbFiller.exe
-D:\_CodeFiles\_VS\_CPP\cpp_book\A3_BI_PROJECT\OrcDbFiller\bin\Debug\OrcDbFiller.pdb
-D:\_CodeFiles\_VS\_CPP\cpp_book\A3_BI_PROJECT\OrcDbFiller\bin\Debug\Newtonsoft.Json.dll
-D:\_CodeFiles\_VS\_CPP\cpp_book\A3_BI_PROJECT\OrcDbFiller\bin\Debug\Newtonsoft.Json.xml
-D:\_CodeFiles\_VS\_CPP\cpp_book\A3_BI_PROJECT\OrcDbFiller\obj\Debug\OrcDbFiller.csprojResolveAssemblyReference.cache
-D:\_CodeFiles\_VS\_CPP\cpp_book\A3_BI_PROJECT\OrcDbFiller\obj\Debug\OrcDbFiller.exe
-D:\_CodeFiles\_VS\_CPP\cpp_book\A3_BI_PROJECT\OrcDbFiller\obj\Debug\OrcDbFiller.pdb
