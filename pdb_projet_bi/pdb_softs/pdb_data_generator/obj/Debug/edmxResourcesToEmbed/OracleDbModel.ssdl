@@ -53,6 +53,17 @@
     <Property Name="MACHINE_CONDITIONNEMENT_ID" Type="number" Precision="10" Scale="0" />
     <Property Name="CONDITIONNEMENT_NOM" Type="varchar2" MaxLength="100" />
   </EntityType>
+  <EntityType Name="COUTS">
+    <Key>
+      <PropertyRef Name="COUT_ID" />
+    </Key>
+    <Property Name="COUT_ID" Type="number" Precision="10" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="COUT_TYPE_BONBON" Type="varchar2" MaxLength="100" />
+    <Property Name="COUT_FABRICATION" Type="number" Precision="10" Scale="0" />
+    <Property Name="COUT_CONDITIONNEMENT" Type="number" Precision="10" Scale="0" />
+    <Property Name="COUT_EXPEDITION" Type="number" Precision="10" Scale="0" />
+    <Property Name="COUT_GENERAL" Type="number" Precision="10" Scale="0" />
+  </EntityType>
   <EntityType Name="MACHINE_CONDITIONNEMENT">
     <Key>
       <PropertyRef Name="MACHINE_CONDITIONNEMENT_ID" />
@@ -76,7 +87,7 @@
     <Property Name="PAYS_ID" Type="number" Precision="10" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="PAYS_NOM" Type="varchar2" MaxLength="100" />
     <Property Name="PAYS_TRANSPORT" Type="varchar2" MaxLength="100" />
-    <Property Name="RATIO_COMMANDE" Type="varchar2" MaxLength="45" />
+    <Property Name="RATIO_COMMANDE" Type="float" Precision="53" Scale="0" />
   </EntityType>
   <EntityType Name="PRIX_LOT">
     <Key>
@@ -98,6 +109,15 @@
     <Property Name="RECETTE_GELIFIANT" Type="number" Precision="10" Scale="0" />
     <Property Name="RECETTE_AROME" Type="number" Precision="10" Scale="0" />
     <Property Name="RECETTE_SUCRE" Type="number" Precision="10" Scale="0" />
+  </EntityType>
+  <EntityType Name="TAUX_VENTES">
+    <Key>
+      <PropertyRef Name="TAUX_VENTE_ID" />
+    </Key>
+    <Property Name="TAUX_VENTE_ID" Type="number" Precision="10" Scale="0" Nullable="false" />
+    <Property Name="TAUX_VENTE_BONBON" Type="varchar2" MaxLength="100" />
+    <Property Name="TAUX_VENTE_ANNEE" Type="number" Precision="10" Scale="0" />
+    <Property Name="TAUX_VENTE_VALEUR" Type="float" Precision="53" Scale="0" />
   </EntityType>
   <EntityType Name="TRANSPORT_INFO">
     <Key>
@@ -230,11 +250,13 @@
     <EntitySet Name="CARTON_INFO" EntityType="Self.CARTON_INFO" Schema="EXIA" store:Type="Tables" />
     <EntitySet Name="COMMANDE" EntityType="Self.COMMANDE" Schema="EXIA" store:Type="Tables" />
     <EntitySet Name="CONDITIONNEMENT" EntityType="Self.CONDITIONNEMENT" Schema="EXIA" store:Type="Tables" />
+    <EntitySet Name="COUTS" EntityType="Self.COUTS" Schema="EXIA" store:Type="Tables" />
     <EntitySet Name="MACHINE_CONDITIONNEMENT" EntityType="Self.MACHINE_CONDITIONNEMENT" Schema="EXIA" store:Type="Tables" />
     <EntitySet Name="MACHINE_FABRICATION" EntityType="Self.MACHINE_FABRICATION" Schema="EXIA" store:Type="Tables" />
     <EntitySet Name="PAYS" EntityType="Self.PAYS" Schema="EXIA" store:Type="Tables" />
     <EntitySet Name="PRIX_LOT" EntityType="Self.PRIX_LOT" Schema="EXIA" store:Type="Tables" />
     <EntitySet Name="RECETTE" EntityType="Self.RECETTE" Schema="EXIA" store:Type="Tables" />
+    <EntitySet Name="TAUX_VENTES" EntityType="Self.TAUX_VENTES" Schema="EXIA" store:Type="Tables" />
     <EntitySet Name="TRANSPORT_INFO" EntityType="Self.TRANSPORT_INFO" Schema="EXIA" store:Type="Tables" />
     <EntitySet Name="VARIANTE" EntityType="Self.VARIANTE" Schema="EXIA" store:Type="Tables" />
     <AssociationSet Name="SYS_C007445" Association="Self.SYS_C007445">

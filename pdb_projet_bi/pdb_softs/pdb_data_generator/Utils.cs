@@ -10,6 +10,10 @@ namespace pdb_data_generator
 {
     public static class Utils
     {
+        #region UtilsFields
+        public static Random rnd = new Random();
+        #endregion
+
         #region InitData
         public static string GetFactoryData()
         {
@@ -360,11 +364,66 @@ namespace pdb_data_generator
             }
         }
 
+        public static void Initialize_TauxVentes()
+        {
+            var data = GetFactoryDataJSON().taux_ventes_2016;
+
+            using (var context = new PalaisDuBonbonEntities())
+            {
+                Console.WriteLine("---- Initialize TAUX_VENTES Table : Data To Procces : " + data.Count);
+                int data_counter = 1;
+                foreach (var d in data)
+                {
+                    TAUX_VENTES tv = new TAUX_VENTES();
+                    //tv.TAUX_VENTE_ID = data_counter;
+                    tv.TAUX_VENTE_ANNEE = 2016;
+                    tv.TAUX_VENTE_BONBON = d.type_bonbon;
+                    tv.TAUX_VENTE_VALEUR = d.valeur;
+
+                    context.TAUX_VENTES.Add(tv);
+
+                    Console.WriteLine("-------- Data Added : (" + data_counter + "/" + data.Count + ")");
+                    data_counter++;
+                }
+
+                context.SaveChanges();
+                Console.WriteLine("---- Initialize TAUX_VENTES Table : DONE ! ----");
+            }
+        }
+
+        public static void Initialize_Couts()
+        {
+            var data = GetFactoryDataJSON().couts_bonbon;
+
+            using (var context = new PalaisDuBonbonEntities())
+            {
+                Console.WriteLine("---- Initialize COUTS Table : Data To Procces : " + data.Count);
+                int data_counter = 1;
+                foreach (var d in data)
+                {
+                    COUT cout = new COUT();
+                    cout.COUT_TYPE_BONBON = d.type_bonbon;
+                    cout.COUT_FABRICATION = d.cout_fabrication;
+                    cout.COUT_CONDITIONNEMENT = d.cout_conditionnement;
+                    cout.COUT_EXPEDITION = d.cout_expedition;
+                    cout.COUT_GENERAL = d.cout_general;
+
+                    context.COUTS.Add(cout);
+                    Console.WriteLine("-------- Data Added : (" + data_counter + "/" + data.Count + ")");
+                    data_counter++;
+                }
+
+                context.SaveChanges();
+                Console.WriteLine("---- Initialize COUTS Table : DONE ! ----");
+            }
+        }
+
         /// <summary>
         /// Initialize Oracle Database with Basic Data
         /// </summary>
         public static void Initialize_BaseData(bool? pauseOnEnd)
         {
+            /*
             Initialize_VariantesData();
             Initialize_ConditionnementData();
             Initialize_TransportInfoData();
@@ -375,9 +434,50 @@ namespace pdb_data_generator
             Initialize_CartonInfos();
             Initialize_Recettes();
             Initialize_PrixLots();
+            */
+            Initialize_TauxVentes();
+            Initialize_Couts();
 
             if (pauseOnEnd.Value)
                 Console.ReadKey(true);
+        }
+        #endregion
+
+        #region OrderGeneration
+        public static void GenerateOrders(int nb, int lots_min, int lots_max)
+        {
+            for(int i = 0; i < nb; i++)
+            {
+                int _numCmd = rnd.Next(100000, 999999);
+                int nb_lots = rnd.Next(lots_min, lots_max);
+
+                for(int j = 0; j < nb_lots; j++)
+                {
+
+                }
+            }
+        }
+
+        public static void GenerateOrders_RandomRepartition(int nb, int lots_min, int lots_max)
+        {
+            for (int i = 0; i < nb; i++)
+            {
+                int _numCmd = rnd.Next(100000, 999999);
+                int nb_lots = rnd.Next(lots_min, lots_max);
+
+                PAYS _pays;
+                DateTime cmd_time = DateTime.Now;
+                using (var context = new PalaisDuBonbonEntities())
+                {
+                    int id_pays = rnd.Next(1, context.PAYS.Count());
+                    _pays = context.PAYS.FirstOrDefault(p => p.PAYS_ID == id_pays);
+                }
+
+                    for (int j = 0; j < nb_lots; j++)
+                    {
+
+                    }
+            }
         }
         #endregion
     }

@@ -37,5 +37,7 @@ namespace pdb_data_generator
         public virtual DbSet<RECETTE> RECETTEs { get; set; }
         public virtual DbSet<TRANSPORT_INFO> TRANSPORT_INFO { get; set; }
         public virtual DbSet<VARIANTE> VARIANTEs { get; set; }
+        public virtual DbSet<TAUX_VENTES> TAUX_VENTES { get; set; }
+        public virtual DbSet<COUT> COUTS { get; set; }
     }
 }

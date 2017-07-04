@@ -13,3 +13,5 @@ D:\_sources\temp\pdb_projet_bi\pdb_softs\pdb_data_generator\obj\Debug\pdb_data_g
 D:\_sources\temp\pdb_projet_bi\pdb_softs\pdb_data_generator\bin\Debug\_static_files\factory_data.json
 D:\_sources\temp\pdb_projet_bi\pdb_softs\pdb_data_generator\bin\Debug\Newtonsoft.Json.dll
 D:\_sources\temp\pdb_projet_bi\pdb_softs\pdb_data_generator\bin\Debug\Newtonsoft.Json.xml
+D:\_sources\temp\pdb_projet_bi\pdb_softs\pdb_data_generator\obj\Debug\pdb_data_generator.CFG_CommandesGenerator.resources
+D:\_sources\temp\pdb_projet_bi\pdb_softs\pdb_data_generator\obj\Debug\pdb_data_generator.csproj.GenerateResource.Cache

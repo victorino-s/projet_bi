@@ -9,7 +9,7 @@
         <EntityTypeShape EntityType="PalaisDuBonbon_DataModel.CARTON" Width="3.75" PointX="9.75" PointY="8.25" IsExpanded="true" />
         <EntityTypeShape EntityType="PalaisDuBonbon_DataModel.CARTON_INFO" Width="3.625" PointX="0.75" PointY="2.25" IsExpanded="true" />
         <EntityTypeShape EntityType="PalaisDuBonbon_DataModel.COMMANDE" Width="2.75" PointX="8.25" PointY="3.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="PalaisDuBonbon_DataModel.CONDITIONNEMENT" Width="3.5" PointX="8.25" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="PalaisDuBonbon_DataModel.CONDITIONNEMENT" Width="3.5" PointX="8.25" PointY="0.5" IsExpanded="true" />
         <EntityTypeShape EntityType="PalaisDuBonbon_DataModel.MACHINE_CONDITIONNEMENT" Width="3.875" PointX="4.125" PointY="0.5" IsExpanded="true" />
         <EntityTypeShape EntityType="PalaisDuBonbon_DataModel.MACHINE_FABRICATION" Width="3.75" PointX="0.5" PointY="5.375" IsExpanded="true" />
         <EntityTypeShape EntityType="PalaisDuBonbon_DataModel.PAYS" Width="1.5" PointX="5.25" PointY="8.375" IsExpanded="true" />
@@ -26,6 +26,8 @@
         <AssociationConnector Association="PalaisDuBonbon_DataModel.SYS_C007446" ManuallyRouted="false" />
         <AssociationConnector Association="PalaisDuBonbon_DataModel.SYS_C007448" ManuallyRouted="false" />
         <AssociationConnector Association="PalaisDuBonbon_DataModel.SYS_C007447" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="PalaisDuBonbon_DataModel.TAUX_VENTES" Width="1.5" PointX="0.75" PointY="11.75" />
+        <EntityTypeShape EntityType="PalaisDuBonbon_DataModel.COUT" Width="1.5" PointX="3.375" PointY="11.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

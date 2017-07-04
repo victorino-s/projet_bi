@@ -10,20 +10,18 @@ namespace pdb_data_generator
     {
         static void Main(string[] args)
         {
-            /*
-            Utils.Initialize_VariantesData();
-            Utils.Initialize_ConditionnementData();
-            Utils.Initialize_TransportInfoData(); 
-            */
-            //Utils.Initialize_PaysData();
-            //Utils.Initialize_BonbonData();
-            //Utils.Initialize_Pays_RatioCommandes();
-            //Utils.Initialize_CartonInfos();
-            //Utils.Initialize_Recettes();
-            //Utils.Initialize_PrixLots();
+            //Utils.Initialize_BaseData(true);
+            Console.WriteLine("-------- Menu --------");
+            Console.WriteLine("1. Generate Orders");
 
-            Utils.Initialize_MachinesConditionnement();
-            Console.ReadLine();
+            string user_choice = Console.ReadLine();
+
+            switch(user_choice)
+            {
+                case "1":
+                    CFG_CommandesGenerator orderGenForm = new CFG_CommandesGenerator();
+                    break;
+            }
         }
     }
 }

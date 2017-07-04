@@ -610,6 +610,307 @@
       "cadence": 150,
       "changement_outil": 15
     }
+  ],
+  "taux_ventes_2016": [
+    {
+      "type_bonbon": "Acidofilo",
+      "valeur": 5.6
+    },
+    {
+      "type_bonbon": "Bouteille Cola",
+      "valeur": 11.12
+    },
+    {
+      "type_bonbon": "Brazil Pik",
+      "valeur": 2.5
+    },
+    {
+      "type_bonbon": "Color Schtroumpf Pik",
+      "valeur": 5.41
+    },
+    {
+      "type_bonbon": "Langues Acides",
+      "valeur": 2.22
+    },
+    {
+      "type_bonbon": "London Pik",
+      "valeur": 4.45
+    },
+    {
+      "type_bonbon": "Miami Pik",
+      "valeur": 3.35
+    },
+    {
+      "type_bonbon": "Pasta Basta",
+      "valeur": 2.85
+    },
+    {
+      "type_bonbon": "Pasta Frutta",
+      "valeur": 2.45
+    },
+    {
+      "type_bonbon": "Sour Snup",
+      "valeur": 1.54
+    },
+    {
+      "type_bonbon": "Dragibus",
+      "valeur": 9.85
+    },
+    {
+      "type_bonbon": "Carensac",
+      "valeur": 1.8
+    },
+    {
+      "type_bonbon": "Fraizibus",
+      "valeur": 3.33
+    },
+    {
+      "type_bonbon": "Grain de millet",
+      "valeur": 0.13
+    },
+    {
+      "type_bonbon": "Starmint",
+      "valeur": 0.89
+    },
+    {
+      "type_bonbon": "Florent Violette",
+      "valeur": 2.3
+    },
+    {
+      "type_bonbon": "Kimono",
+      "valeur": 1.11
+    },
+    {
+      "type_bonbon": "Pain Zan",
+      "valeur": 1
+    },
+    {
+      "type_bonbon": "Rotella",
+      "valeur": 0.5
+    },
+    {
+      "type_bonbon": "Zanoïd",
+      "valeur": 0.32
+    },
+    {
+      "type_bonbon": "Fraise Tagada",
+      "valeur": 8
+    },
+    {
+      "type_bonbon": "Croco",
+      "valeur": 7.5
+    },
+    {
+      "type_bonbon": "Chamallows",
+      "valeur": 6.4
+    },
+    {
+      "type_bonbon": "Polka",
+      "valeur": 2.2
+    },
+    {
+      "type_bonbon": "Banane",
+      "valeur": 6.81
+    },
+    {
+      "type_bonbon": "Ourson",
+      "valeur": 5.22
+    },
+    {
+      "type_bonbon": "Filament",
+      "valeur": 1.15
+    }
+  ],
+  "couts_bonbon": [
+    {
+      "type_bonbon": "Acidofilo",
+      "cout_fabrication": 10,
+      "cout_conditionnement": 10,
+      "cout_expedition": 11,
+      "cout_general": 13
+    },
+    {
+      "type_bonbon": "Bouteille Cola",
+      "cout_fabrication": 15,
+      "cout_conditionnement": 14,
+      "cout_expedition": 19,
+      "cout_general": 10
+    },
+    {
+      "type_bonbon": "Brazil Pik",
+      "cout_fabrication": 13,
+      "cout_conditionnement": 14,
+      "cout_expedition": 15,
+      "cout_general": 9
+    },
+    {
+      "type_bonbon": "Color Schtroumpf Pik",
+      "cout_fabrication": 9,
+      "cout_conditionnement": 16,
+      "cout_expedition": 20,
+      "cout_general": 9
+    },
+    {
+      "type_bonbon": "Langues Acides",
+      "cout_fabrication": 15,
+      "cout_conditionnement": 8,
+      "cout_expedition": 11,
+      "cout_general": 16
+    },
+    {
+      "type_bonbon": "London Pik",
+      "cout_fabrication": 16,
+      "cout_conditionnement": 9,
+      "cout_expedition": 20,
+      "cout_general": 13
+    },
+    {
+      "type_bonbon": "Miami Pik",
+      "cout_fabrication": 8,
+      "cout_conditionnement": 8,
+      "cout_expedition": 11,
+      "cout_general": 10
+    },
+    {
+      "type_bonbon": "Pasta Basta",
+      "cout_fabrication": 12,
+      "cout_conditionnement": 19,
+      "cout_expedition": 16,
+      "cout_general": 8
+    },
+    {
+      "type_bonbon": "Pasta Frutta",
+      "cout_fabrication": 18,
+      "cout_conditionnement": 13,
+      "cout_expedition": 16,
+      "cout_general": 13
+    },
+    {
+      "type_bonbon": "Sour Snup",
+      "cout_fabrication": 11,
+      "cout_conditionnement": 16,
+      "cout_expedition": 17,
+      "cout_general": 16
+    },
+    {
+      "type_bonbon": "Dragibus",
+      "cout_fabrication": 20,
+      "cout_conditionnement": 9,
+      "cout_expedition": 12,
+      "cout_general": 15
+    },
+    {
+      "type_bonbon": "Carensac",
+      "cout_fabrication": 16,
+      "cout_conditionnement": 12,
+      "cout_expedition": 14,
+      "cout_general": 18
+    },
+    {
+      "type_bonbon": "Fraizibus",
+      "cout_fabrication": 13,
+      "cout_conditionnement": 15,
+      "cout_expedition": 14,
+      "cout_general": 11
+    },
+    {
+      "type_bonbon": "Grain de millet",
+      "cout_fabrication": 8,
+      "cout_conditionnement": 15,
+      "cout_expedition": 13,
+      "cout_general": 14
+    },
+    {
+      "type_bonbon": "Starmint",
+      "cout_fabrication": 14,
+      "cout_conditionnement": 9,
+      "cout_expedition": 18,
+      "cout_general": 15
+    },
+    {
+      "type_bonbon": "Florent Violette",
+      "cout_fabrication": 19,
+      "cout_conditionnement": 14,
+      "cout_expedition": 20,
+      "cout_general": 17
+    },
+    {
+      "type_bonbon": "Kimono",
+      "cout_fabrication": 14,
+      "cout_conditionnement": 19,
+      "cout_expedition": 12,
+      "cout_general": 13
+    },
+    {
+      "type_bonbon": "Pain Zan",
+      "cout_fabrication": 12,
+      "cout_conditionnement": 16,
+      "cout_expedition": 12,
+      "cout_general": 14
+    },
+    {
+      "type_bonbon": "Rotella",
+      "cout_fabrication": 11,
+      "cout_conditionnement": 11,
+      "cout_expedition": 14,
+      "cout_general": 19
+    },
+    {
+      "type_bonbon": "Zanoïd",
+      "cout_fabrication": 19,
+      "cout_conditionnement": 14,
+      "cout_expedition": 8,
+      "cout_general": 11
+    },
+    {
+      "type_bonbon": "Fraise Tagada",
+      "cout_fabrication": 12,
+      "cout_conditionnement": 8,
+      "cout_expedition": 12,
+      "cout_general": 16
+    },
+    {
+      "type_bonbon": "Croco",
+      "cout_fabrication": 12,
+      "cout_conditionnement": 20,
+      "cout_expedition": 8,
+      "cout_general": 18
+    },
+    {
+      "type_bonbon": "Chamallows",
+      "cout_fabrication": 16,
+      "cout_conditionnement": 11,
+      "cout_expedition": 13,
+      "cout_general": 11
+    },
+    {
+      "type_bonbon": "Polka",
+      "cout_fabrication": 11,
+      "cout_conditionnement": 15,
+      "cout_expedition": 10,
+      "cout_general": 8
+    },
+    {
+      "type_bonbon": "Banane",
+      "cout_fabrication": 9,
+      "cout_conditionnement": 14,
+      "cout_expedition": 15,
+      "cout_general": 14
+    },
+    {
+      "type_bonbon": "Ourson",
+      "cout_fabrication": 15,
+      "cout_conditionnement": 9,
+      "cout_expedition": 17,
+      "cout_general": 20
+    },
+    {
+      "type_bonbon": "Filament",
+      "cout_fabrication": 8,
+      "cout_conditionnement": 11,
+      "cout_expedition": 11,
+      "cout_general": 19
+    }
   ]
 
 }

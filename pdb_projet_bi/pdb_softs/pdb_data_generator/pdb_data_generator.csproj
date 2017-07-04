@@ -56,8 +56,10 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -75,10 +77,19 @@
     <Compile Include="CARTON_INFO.cs">
       <DependentUpon>OracleDbModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="CFG_CommandesGenerator.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CFG_CommandesGenerator.Designer.cs">
+      <DependentUpon>CFG_CommandesGenerator.cs</DependentUpon>
+    </Compile>
     <Compile Include="COMMANDE.cs">
       <DependentUpon>OracleDbModel.tt</DependentUpon>
     </Compile>
     <Compile Include="CONDITIONNEMENT.cs">
+      <DependentUpon>OracleDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="COUT.cs">
       <DependentUpon>OracleDbModel.tt</DependentUpon>
     </Compile>
     <Compile Include="MACHINE_CONDITIONNEMENT.cs">
@@ -102,6 +113,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>OracleDbModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="OrderGenerator.cs" />
     <Compile Include="PAYS.cs">
       <DependentUpon>OracleDbModel.tt</DependentUpon>
     </Compile>
@@ -111,6 +123,9 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RECETTE.cs">
+      <DependentUpon>OracleDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TAUX_VENTES.cs">
       <DependentUpon>OracleDbModel.tt</DependentUpon>
     </Compile>
     <Compile Include="TRANSPORT_INFO.cs">
@@ -150,7 +165,11 @@
       <LastGenOutput>OracleDbModel.cs</LastGenOutput>
     </Content>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="CFG_CommandesGenerator.resx">
+      <DependentUpon>CFG_CommandesGenerator.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -23,7 +23,7 @@ namespace pdb_data_generator
         public int PAYS_ID { get; set; }
         public string PAYS_NOM { get; set; }
         public string PAYS_TRANSPORT { get; set; }
-        public string RATIO_COMMANDE { get; set; }
+        public Nullable<decimal> RATIO_COMMANDE { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<COMMANDE> COMMANDEs { get; set; }

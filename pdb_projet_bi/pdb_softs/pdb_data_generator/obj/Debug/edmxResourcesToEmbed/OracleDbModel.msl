@@ -129,5 +129,27 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="TAUX_VENTES">
+      <EntityTypeMapping TypeName="PalaisDuBonbon_DataModel.TAUX_VENTES">
+        <MappingFragment StoreEntitySet="TAUX_VENTES">
+          <ScalarProperty Name="TAUX_VENTE_VALEUR" ColumnName="TAUX_VENTE_VALEUR" />
+          <ScalarProperty Name="TAUX_VENTE_ANNEE" ColumnName="TAUX_VENTE_ANNEE" />
+          <ScalarProperty Name="TAUX_VENTE_BONBON" ColumnName="TAUX_VENTE_BONBON" />
+          <ScalarProperty Name="TAUX_VENTE_ID" ColumnName="TAUX_VENTE_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="COUTS">
+      <EntityTypeMapping TypeName="PalaisDuBonbon_DataModel.COUT">
+        <MappingFragment StoreEntitySet="COUTS">
+          <ScalarProperty Name="COUT_GENERAL" ColumnName="COUT_GENERAL" />
+          <ScalarProperty Name="COUT_EXPEDITION" ColumnName="COUT_EXPEDITION" />
+          <ScalarProperty Name="COUT_CONDITIONNEMENT" ColumnName="COUT_CONDITIONNEMENT" />
+          <ScalarProperty Name="COUT_FABRICATION" ColumnName="COUT_FABRICATION" />
+          <ScalarProperty Name="COUT_TYPE_BONBON" ColumnName="COUT_TYPE_BONBON" />
+          <ScalarProperty Name="COUT_ID" ColumnName="COUT_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>
