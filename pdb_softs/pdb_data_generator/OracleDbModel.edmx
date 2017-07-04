@@ -1,0 +1,802 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="PalaisDuBonbon_DataModel.Store" Provider="Oracle.ManagedDataAccess.Client" ProviderManifestToken="12.2" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="BONBON">
+          <Key>
+            <PropertyRef Name="BONBON_ID" />
+          </Key>
+          <Property Name="BONBON_ID" Type="number" Precision="10" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="BONBON_TYPE" Type="varchar2" MaxLength="100" />
+          <Property Name="BONBON_TEXTURE" Type="varchar2" MaxLength="100" />
+          <Property Name="BONBON_COULEUR" Type="varchar2" MaxLength="100" />
+          <Property Name="VARIANTE_ID" Type="number" Precision="10" Scale="0" />
+        </EntityType>
+        <EntityType Name="CARTON">
+          <Key>
+            <PropertyRef Name="CARTON_ID" />
+          </Key>
+          <Property Name="CARTON_ID" Type="number" Precision="10" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CARTON_QUANTITE_LOT" Type="number" Precision="10" Scale="0" />
+          <Property Name="CARTON_ID_GARE" Type="number" Precision="10" Scale="0" />
+          <Property Name="COMMANDE_ID" Type="number" Precision="10" Scale="0" />
+        </EntityType>
+        <EntityType Name="CARTON_INFO">
+          <Key>
+            <PropertyRef Name="CARTON_INFO_ID" />
+          </Key>
+          <Property Name="CARTON_INFO_ID" Type="number" Precision="10" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CARTON_INFO_TYPE_CONDITIONNEMENT" Type="varchar2" MaxLength="100" />
+          <Property Name="CARTON_INFO_QUANTITE" Type="number" Precision="10" Scale="0" />
+        </EntityType>
+        <EntityType Name="COMMANDE">
+          <Key>
+            <PropertyRef Name="COMMANDE_ID" />
+          </Key>
+          <Property Name="COMMANDE_ID" Type="number" Precision="10" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="COMMANDE_NUM_COMMANDE" Type="number" Precision="10" Scale="0" />
+          <Property Name="COMMANDE_ETAT" Type="number" Precision="1" Scale="0" />
+          <Property Name="COMMANDE_DATE_COMMANDE" Type="date" />
+          <Property Name="COMMANDE_DATE_FABRICATION" Type="date" />
+          <Property Name="COMMANDE_DATE_CONDITIONNEMENT" Type="date" />
+          <Property Name="COMMANDE_DATE_EXPEDITION" Type="date" />
+          <Property Name="COMMANDE_PRIX_LOT" Type="float" Precision="126" Scale="0" />
+          <Property Name="COMMANDE_CARTON" Type="varchar2" MaxLength="100" />
+          <Property Name="PAYS_ID" Type="number" Precision="10" Scale="0" />
+          <Property Name="BONBON_ID" Type="number" Precision="10" Scale="0" />
+          <Property Name="CONDITIONNEMENT_ID" Type="number" Precision="10" Scale="0" />
+          <Property Name="COMMANDE_QUANTITE" Type="number" Precision="10" Scale="0" />
+        </EntityType>
+        <EntityType Name="CONDITIONNEMENT">
+          <Key>
+            <PropertyRef Name="CONDITIONNEMENT_ID" />
+          </Key>
+          <Property Name="CONDITIONNEMENT_ID" Type="number" Precision="10" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CONDITIONNEMENT_QUANTITE_MAX" Type="number" Precision="10" Scale="0" />
+          <Property Name="MACHINE_CONDITIONNEMENT_ID" Type="number" Precision="10" Scale="0" />
+          <Property Name="CONDITIONNEMENT_NOM" Type="varchar2" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="COUTS">
+          <Key>
+            <PropertyRef Name="COUT_ID" />
+          </Key>
+          <Property Name="COUT_ID" Type="number" Precision="10" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="COUT_TYPE_BONBON" Type="varchar2" MaxLength="100" />
+          <Property Name="COUT_FABRICATION" Type="number" Precision="10" Scale="0" />
+          <Property Name="COUT_CONDITIONNEMENT" Type="number" Precision="10" Scale="0" />
+          <Property Name="COUT_EXPEDITION" Type="number" Precision="10" Scale="0" />
+          <Property Name="COUT_GENERAL" Type="number" Precision="10" Scale="0" />
+        </EntityType>
+        <EntityType Name="MACHINE_CONDITIONNEMENT">
+          <Key>
+            <PropertyRef Name="MACHINE_CONDITIONNEMENT_ID" />
+          </Key>
+          <Property Name="MACHINE_CONDITIONNEMENT_ID" Type="number" Precision="10" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MACHINE_CONDITIONNEMENT_CADENCE" Type="number" Precision="10" Scale="0" />
+          <Property Name="MACHINE_CONDITIONNEMENT_CHANGEMENT_OUTIL" Type="number" Precision="10" Scale="0" />
+        </EntityType>
+        <EntityType Name="MACHINE_FABRICATION">
+          <Key>
+            <PropertyRef Name="MACHINE_FABRICATION_ID" />
+          </Key>
+          <Property Name="MACHINE_FABRICATION_ID" Type="number" Precision="10" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MACHINE_FABRICATION_CHANGEMENT_OUTIL" Type="number" Precision="10" Scale="0" />
+          <Property Name="MACHINE_FABRICATION_CADENCE" Type="number" Precision="10" Scale="0" />
+        </EntityType>
+        <EntityType Name="PAYS">
+          <Key>
+            <PropertyRef Name="PAYS_ID" />
+          </Key>
+          <Property Name="PAYS_ID" Type="number" Precision="10" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PAYS_NOM" Type="varchar2" MaxLength="100" />
+          <Property Name="PAYS_TRANSPORT" Type="varchar2" MaxLength="100" />
+          <Property Name="RATIO_COMMANDE" Type="float" Precision="53" Scale="0" />
+          <Property Name="PAYS_RATIO_COMMANDE" Type="float" Precision="53" Scale="0" />
+        </EntityType>
+        <EntityType Name="PRIX_LOT">
+          <Key>
+            <PropertyRef Name="PRIX_LOT_ID" />
+          </Key>
+          <Property Name="PRIX_LOT_ID" Type="number" Precision="10" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PRIX_LOT_PRIX" Type="float" Precision="126" Scale="0" />
+          <Property Name="BONBON_ID" Type="number" Precision="10" Scale="0" />
+          <Property Name="CONDITIONNEMENT_ID" Type="number" Precision="10" Scale="0" />
+        </EntityType>
+        <EntityType Name="RECETTE">
+          <Key>
+            <PropertyRef Name="RECETTE_ID" />
+          </Key>
+          <Property Name="RECETTE_ID" Type="number" Precision="10" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RECETTE_TYPE" Type="varchar2" MaxLength="100" />
+          <Property Name="RECETTE_ADDITIF" Type="number" Precision="10" Scale="0" />
+          <Property Name="RECETTE_ENROBAGE" Type="number" Precision="10" Scale="0" />
+          <Property Name="RECETTE_GELIFIANT" Type="number" Precision="10" Scale="0" />
+          <Property Name="RECETTE_AROME" Type="number" Precision="10" Scale="0" />
+          <Property Name="RECETTE_SUCRE" Type="number" Precision="10" Scale="0" />
+        </EntityType>
+        <EntityType Name="TAUX_VENTES">
+          <Key>
+            <PropertyRef Name="TAUX_VENTE_ID" />
+          </Key>
+          <Property Name="TAUX_VENTE_ID" Type="number" Precision="10" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TAUX_VENTE_BONBON" Type="varchar2" MaxLength="100" />
+          <Property Name="TAUX_VENTE_ANNEE" Type="number" Precision="10" Scale="0" />
+          <Property Name="TAUX_VENTE_VALEUR" Type="float" Precision="53" Scale="0" />
+        </EntityType>
+        <EntityType Name="TRANSPORT_INFO">
+          <Key>
+            <PropertyRef Name="TRANSPORT_INFO_ID" />
+          </Key>
+          <Property Name="TRANSPORT_INFO_ID" Type="number" Precision="10" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TRANSPORT_INFO_TYPE_TRANSPORT" Type="varchar2" MaxLength="100" />
+          <Property Name="TRANSPORT_INFO_QUANTITE_PALETTE" Type="number" Precision="10" Scale="0" />
+          <Property Name="TRANSPORT_INFO_CARTON_PAR_PALETTE" Type="number" Precision="10" Scale="0" />
+        </EntityType>
+        <EntityType Name="VARIANTE">
+          <Key>
+            <PropertyRef Name="VARIANTE_ID" />
+          </Key>
+          <Property Name="VARIANTE_ID" Type="number" Precision="10" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="VARIANTE_NOM" Type="varchar2" MaxLength="100" />
+          <Property Name="MACHINE_FABRICATION_ID" Type="number" Precision="10" Scale="0" />
+        </EntityType>
+        <Association Name="SYS_C007445">
+          <End Role="BONBON" Type="Self.BONBON" Multiplicity="0..1" />
+          <End Role="PRIX_LOT" Type="Self.PRIX_LOT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BONBON">
+              <PropertyRef Name="BONBON_ID" />
+            </Principal>
+            <Dependent Role="PRIX_LOT">
+              <PropertyRef Name="BONBON_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C007446">
+          <End Role="CONDITIONNEMENT" Type="Self.CONDITIONNEMENT" Multiplicity="0..1" />
+          <End Role="PRIX_LOT" Type="Self.PRIX_LOT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CONDITIONNEMENT">
+              <PropertyRef Name="CONDITIONNEMENT_ID" />
+            </Principal>
+            <Dependent Role="PRIX_LOT">
+              <PropertyRef Name="CONDITIONNEMENT_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C007447">
+          <End Role="MACHINE_FABRICATION" Type="Self.MACHINE_FABRICATION" Multiplicity="0..1" />
+          <End Role="VARIANTE" Type="Self.VARIANTE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MACHINE_FABRICATION">
+              <PropertyRef Name="MACHINE_FABRICATION_ID" />
+            </Principal>
+            <Dependent Role="VARIANTE">
+              <PropertyRef Name="MACHINE_FABRICATION_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C007448">
+          <End Role="MACHINE_CONDITIONNEMENT" Type="Self.MACHINE_CONDITIONNEMENT" Multiplicity="0..1" />
+          <End Role="CONDITIONNEMENT" Type="Self.CONDITIONNEMENT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MACHINE_CONDITIONNEMENT">
+              <PropertyRef Name="MACHINE_CONDITIONNEMENT_ID" />
+            </Principal>
+            <Dependent Role="CONDITIONNEMENT">
+              <PropertyRef Name="MACHINE_CONDITIONNEMENT_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C007449">
+          <End Role="PAYS" Type="Self.PAYS" Multiplicity="0..1" />
+          <End Role="COMMANDE" Type="Self.COMMANDE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PAYS">
+              <PropertyRef Name="PAYS_ID" />
+            </Principal>
+            <Dependent Role="COMMANDE">
+              <PropertyRef Name="PAYS_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C007450">
+          <End Role="BONBON" Type="Self.BONBON" Multiplicity="0..1" />
+          <End Role="COMMANDE" Type="Self.COMMANDE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BONBON">
+              <PropertyRef Name="BONBON_ID" />
+            </Principal>
+            <Dependent Role="COMMANDE">
+              <PropertyRef Name="BONBON_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C007451">
+          <End Role="CONDITIONNEMENT" Type="Self.CONDITIONNEMENT" Multiplicity="0..1" />
+          <End Role="COMMANDE" Type="Self.COMMANDE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CONDITIONNEMENT">
+              <PropertyRef Name="CONDITIONNEMENT_ID" />
+            </Principal>
+            <Dependent Role="COMMANDE">
+              <PropertyRef Name="CONDITIONNEMENT_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C007452">
+          <End Role="COMMANDE" Type="Self.COMMANDE" Multiplicity="0..1" />
+          <End Role="CARTON" Type="Self.CARTON" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="COMMANDE">
+              <PropertyRef Name="COMMANDE_ID" />
+            </Principal>
+            <Dependent Role="CARTON">
+              <PropertyRef Name="COMMANDE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C007489">
+          <End Role="VARIANTE" Type="Self.VARIANTE" Multiplicity="0..1" />
+          <End Role="BONBON" Type="Self.BONBON" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="VARIANTE">
+              <PropertyRef Name="VARIANTE_ID" />
+            </Principal>
+            <Dependent Role="BONBON">
+              <PropertyRef Name="VARIANTE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="PalaisDuBonbon_DataModelStoreContainer">
+          <EntitySet Name="BONBON" EntityType="Self.BONBON" Schema="EXIA" store:Type="Tables" />
+          <EntitySet Name="CARTON" EntityType="Self.CARTON" Schema="EXIA" store:Type="Tables" />
+          <EntitySet Name="CARTON_INFO" EntityType="Self.CARTON_INFO" Schema="EXIA" store:Type="Tables" />
+          <EntitySet Name="COMMANDE" EntityType="Self.COMMANDE" Schema="EXIA" store:Type="Tables" />
+          <EntitySet Name="CONDITIONNEMENT" EntityType="Self.CONDITIONNEMENT" Schema="EXIA" store:Type="Tables" />
+          <EntitySet Name="COUTS" EntityType="Self.COUTS" Schema="EXIA" store:Type="Tables" />
+          <EntitySet Name="MACHINE_CONDITIONNEMENT" EntityType="Self.MACHINE_CONDITIONNEMENT" Schema="EXIA" store:Type="Tables" />
+          <EntitySet Name="MACHINE_FABRICATION" EntityType="Self.MACHINE_FABRICATION" Schema="EXIA" store:Type="Tables" />
+          <EntitySet Name="PAYS" EntityType="Self.PAYS" Schema="EXIA" store:Type="Tables" />
+          <EntitySet Name="PRIX_LOT" EntityType="Self.PRIX_LOT" Schema="EXIA" store:Type="Tables" />
+          <EntitySet Name="RECETTE" EntityType="Self.RECETTE" Schema="EXIA" store:Type="Tables" />
+          <EntitySet Name="TAUX_VENTES" EntityType="Self.TAUX_VENTES" Schema="EXIA" store:Type="Tables" />
+          <EntitySet Name="TRANSPORT_INFO" EntityType="Self.TRANSPORT_INFO" Schema="EXIA" store:Type="Tables" />
+          <EntitySet Name="VARIANTE" EntityType="Self.VARIANTE" Schema="EXIA" store:Type="Tables" />
+          <AssociationSet Name="SYS_C007445" Association="Self.SYS_C007445">
+            <End Role="BONBON" EntitySet="BONBON" />
+            <End Role="PRIX_LOT" EntitySet="PRIX_LOT" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C007446" Association="Self.SYS_C007446">
+            <End Role="CONDITIONNEMENT" EntitySet="CONDITIONNEMENT" />
+            <End Role="PRIX_LOT" EntitySet="PRIX_LOT" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C007447" Association="Self.SYS_C007447">
+            <End Role="MACHINE_FABRICATION" EntitySet="MACHINE_FABRICATION" />
+            <End Role="VARIANTE" EntitySet="VARIANTE" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C007448" Association="Self.SYS_C007448">
+            <End Role="MACHINE_CONDITIONNEMENT" EntitySet="MACHINE_CONDITIONNEMENT" />
+            <End Role="CONDITIONNEMENT" EntitySet="CONDITIONNEMENT" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C007449" Association="Self.SYS_C007449">
+            <End Role="PAYS" EntitySet="PAYS" />
+            <End Role="COMMANDE" EntitySet="COMMANDE" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C007450" Association="Self.SYS_C007450">
+            <End Role="BONBON" EntitySet="BONBON" />
+            <End Role="COMMANDE" EntitySet="COMMANDE" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C007451" Association="Self.SYS_C007451">
+            <End Role="CONDITIONNEMENT" EntitySet="CONDITIONNEMENT" />
+            <End Role="COMMANDE" EntitySet="COMMANDE" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C007452" Association="Self.SYS_C007452">
+            <End Role="COMMANDE" EntitySet="COMMANDE" />
+            <End Role="CARTON" EntitySet="CARTON" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C007489" Association="Self.SYS_C007489">
+            <End Role="VARIANTE" EntitySet="VARIANTE" />
+            <End Role="BONBON" EntitySet="BONBON" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="PalaisDuBonbon_DataModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="BONBON">
+          <Key>
+            <PropertyRef Name="BONBON_ID" />
+          </Key>
+          <Property Name="BONBON_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BONBON_TYPE" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="BONBON_TEXTURE" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="BONBON_COULEUR" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="VARIANTE_ID" Type="Int32" />
+          <NavigationProperty Name="VARIANTE" Relationship="Self.SYS_C007453" FromRole="BONBON" ToRole="VARIANTE" />
+        </EntityType>
+        <EntityType Name="CARTON">
+          <Key>
+            <PropertyRef Name="CARTON_ID" />
+          </Key>
+          <Property Name="CARTON_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CARTON_QUANTITE_LOT" Type="Int32" />
+          <Property Name="CARTON_ID_GARE" Type="Int32" />
+          <Property Name="COMMANDE_ID" Type="Int32" />
+          <NavigationProperty Name="COMMANDE" Relationship="Self.SYS_C007452" FromRole="CARTON" ToRole="COMMANDE" />
+        </EntityType>
+        <EntityType Name="CARTON_INFO">
+          <Key>
+            <PropertyRef Name="CARTON_INFO_ID" />
+          </Key>
+          <Property Name="CARTON_INFO_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CARTON_INFO_TYPE_CONDITIONNEMENT" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="CARTON_INFO_QUANTITE" Type="Int32" />
+        </EntityType>
+        <EntityType Name="COMMANDE">
+          <Key>
+            <PropertyRef Name="COMMANDE_ID" />
+          </Key>
+          <Property Name="COMMANDE_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="COMMANDE_NUM_COMMANDE" Type="Int32" />
+          <Property Name="COMMANDE_ETAT" Type="Boolean" />
+          <Property Name="COMMANDE_DATE_COMMANDE" Type="DateTime" />
+          <Property Name="COMMANDE_DATE_FABRICATION" Type="DateTime" />
+          <Property Name="COMMANDE_DATE_CONDITIONNEMENT" Type="DateTime" />
+          <Property Name="COMMANDE_DATE_EXPEDITION" Type="DateTime" />
+          <Property Name="COMMANDE_PRIX_LOT" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="COMMANDE_CARTON" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="PAYS_ID" Type="Int32" />
+          <Property Name="BONBON_ID" Type="Int32" />
+          <Property Name="CONDITIONNEMENT_ID" Type="Int32" />
+          <NavigationProperty Name="BONBON" Relationship="Self.SYS_C007450" FromRole="COMMANDE" ToRole="BONBON" />
+          <NavigationProperty Name="CARTONs" Relationship="Self.SYS_C007452" FromRole="COMMANDE" ToRole="CARTON" />
+          <NavigationProperty Name="PAY" Relationship="Self.SYS_C007449" FromRole="COMMANDE" ToRole="PAYS" />
+          <NavigationProperty Name="CONDITIONNEMENT" Relationship="Self.SYS_C007451" FromRole="COMMANDE" ToRole="CONDITIONNEMENT" />
+          <Property Name="COMMANDE_QUANTITE" Type="Int32" />
+        </EntityType>
+        <EntityType Name="CONDITIONNEMENT">
+          <Key>
+            <PropertyRef Name="CONDITIONNEMENT_ID" />
+          </Key>
+          <Property Name="CONDITIONNEMENT_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CONDITIONNEMENT_QUANTITE_MAX" Type="Int32" />
+          <Property Name="MACHINE_CONDITIONNEMENT_ID" Type="Int32" />
+          <NavigationProperty Name="COMMANDEs" Relationship="Self.SYS_C007451" FromRole="CONDITIONNEMENT" ToRole="COMMANDE" />
+          <NavigationProperty Name="MACHINE_CONDITIONNEMENT" Relationship="Self.SYS_C007448" FromRole="CONDITIONNEMENT" ToRole="MACHINE_CONDITIONNEMENT" />
+          <Property Name="CONDITIONNEMENT_NOM" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="MACHINE_CONDITIONNEMENT">
+          <Key>
+            <PropertyRef Name="MACHINE_CONDITIONNEMENT_ID" />
+          </Key>
+          <Property Name="MACHINE_CONDITIONNEMENT_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MACHINE_CONDITIONNEMENT_CADENCE" Type="Int32" />
+          <Property Name="MACHINE_CONDITIONNEMENT_CHANGEMENT_OUTIL" Type="Int32" />
+          <NavigationProperty Name="CONDITIONNEMENTs" Relationship="Self.SYS_C007448" FromRole="MACHINE_CONDITIONNEMENT" ToRole="CONDITIONNEMENT" />
+        </EntityType>
+        <EntityType Name="MACHINE_FABRICATION">
+          <Key>
+            <PropertyRef Name="MACHINE_FABRICATION_ID" />
+          </Key>
+          <Property Name="MACHINE_FABRICATION_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MACHINE_FABRICATION_CHANGEMENT_OUTIL" Type="Int32" />
+          <Property Name="MACHINE_FABRICATION_CADENCE" Type="Int32" />
+          <NavigationProperty Name="VARIANTEs" Relationship="Self.SYS_C007447" FromRole="MACHINE_FABRICATION" ToRole="VARIANTE" />
+        </EntityType>
+        <EntityType Name="PAYS">
+          <Key>
+            <PropertyRef Name="PAYS_ID" />
+          </Key>
+          <Property Name="PAYS_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PAYS_NOM" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="PAYS_TRANSPORT" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="RATIO_COMMANDE" Type="Decimal" />
+          <Property Name="PAYS_RATIO_COMMANDE" Type="Decimal" Precision="16" Scale="0" />
+        </EntityType>
+        <EntityType Name="PRIX_LOT">
+          <Key>
+            <PropertyRef Name="PRIX_LOT_ID" />
+          </Key>
+          <Property Name="PRIX_LOT_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PRIX_LOT_PRIX" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="BONBON_ID" Type="Int32" />
+          <Property Name="CONDITIONNEMENT_ID" Type="Int32" />
+          <NavigationProperty Name="BONBON" Relationship="Self.SYS_C007445" FromRole="PRIX_LOT" ToRole="BONBON" />
+          <NavigationProperty Name="CONDITIONNEMENT" Relationship="Self.SYS_C007446" FromRole="PRIX_LOT" ToRole="CONDITIONNEMENT" />
+        </EntityType>
+        <EntityType Name="RECETTE">
+          <Key>
+            <PropertyRef Name="RECETTE_ID" />
+          </Key>
+          <Property Name="RECETTE_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RECETTE_TYPE" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="RECETTE_ADDITIF" Type="Int32" />
+          <Property Name="RECETTE_ENROBAGE" Type="Int32" />
+          <Property Name="RECETTE_GELIFIANT" Type="Int32" />
+          <Property Name="RECETTE_AROME" Type="Int32" />
+          <Property Name="RECETTE_SUCRE" Type="Int32" />
+        </EntityType>
+        <EntityType Name="TRANSPORT_INFO">
+          <Key>
+            <PropertyRef Name="TRANSPORT_INFO_ID" />
+          </Key>
+          <Property Name="TRANSPORT_INFO_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TRANSPORT_INFO_TYPE_TRANSPORT" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="TRANSPORT_INFO_QUANTITE_PALETTE" Type="Int32" />
+          <Property Name="TRANSPORT_INFO_CARTON_PAR_PALETTE" Type="Int32" />
+        </EntityType>
+        <EntityType Name="VARIANTE">
+          <Key>
+            <PropertyRef Name="VARIANTE_ID" />
+          </Key>
+          <Property Name="VARIANTE_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="VARIANTE_NOM" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="MACHINE_FABRICATION_ID" Type="Int32" />
+          <NavigationProperty Name="MACHINE_FABRICATION" Relationship="Self.SYS_C007447" FromRole="VARIANTE" ToRole="MACHINE_FABRICATION" />
+        </EntityType>
+        <Association Name="SYS_C007445">
+          <End Role="BONBON" Type="Self.BONBON" Multiplicity="0..1" />
+          <End Role="PRIX_LOT" Type="Self.PRIX_LOT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BONBON">
+              <PropertyRef Name="BONBON_ID" />
+            </Principal>
+            <Dependent Role="PRIX_LOT">
+              <PropertyRef Name="BONBON_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C007450">
+          <End Role="BONBON" Type="Self.BONBON" Multiplicity="0..1" />
+          <End Role="COMMANDE" Type="Self.COMMANDE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BONBON">
+              <PropertyRef Name="BONBON_ID" />
+            </Principal>
+            <Dependent Role="COMMANDE">
+              <PropertyRef Name="BONBON_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C007453">
+          <End Role="VARIANTE" Type="Self.VARIANTE" Multiplicity="0..1" />
+          <End Role="BONBON" Type="Self.BONBON" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="VARIANTE">
+              <PropertyRef Name="VARIANTE_ID" />
+            </Principal>
+            <Dependent Role="BONBON">
+              <PropertyRef Name="VARIANTE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C007452">
+          <End Role="COMMANDE" Type="Self.COMMANDE" Multiplicity="0..1" />
+          <End Role="CARTON" Type="Self.CARTON" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="COMMANDE">
+              <PropertyRef Name="COMMANDE_ID" />
+            </Principal>
+            <Dependent Role="CARTON">
+              <PropertyRef Name="COMMANDE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C007449">
+          <End Role="PAYS" Type="PalaisDuBonbon_DataModel.PAYS" Multiplicity="0..1" />
+          <End Role="COMMANDE" Type="Self.COMMANDE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PAYS">
+              <PropertyRef Name="PAYS_ID" />
+            </Principal>
+            <Dependent Role="COMMANDE">
+              <PropertyRef Name="PAYS_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C007451">
+          <End Role="CONDITIONNEMENT" Type="Self.CONDITIONNEMENT" Multiplicity="0..1" />
+          <End Role="COMMANDE" Type="Self.COMMANDE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CONDITIONNEMENT">
+              <PropertyRef Name="CONDITIONNEMENT_ID" />
+            </Principal>
+            <Dependent Role="COMMANDE">
+              <PropertyRef Name="CONDITIONNEMENT_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C007446">
+          <End Role="CONDITIONNEMENT" Type="Self.CONDITIONNEMENT" Multiplicity="0..1" />
+          <End Role="PRIX_LOT" Type="Self.PRIX_LOT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CONDITIONNEMENT">
+              <PropertyRef Name="CONDITIONNEMENT_ID" />
+            </Principal>
+            <Dependent Role="PRIX_LOT">
+              <PropertyRef Name="CONDITIONNEMENT_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C007448">
+          <End Role="MACHINE_CONDITIONNEMENT" Type="Self.MACHINE_CONDITIONNEMENT" Multiplicity="0..1" />
+          <End Role="CONDITIONNEMENT" Type="Self.CONDITIONNEMENT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MACHINE_CONDITIONNEMENT">
+              <PropertyRef Name="MACHINE_CONDITIONNEMENT_ID" />
+            </Principal>
+            <Dependent Role="CONDITIONNEMENT">
+              <PropertyRef Name="MACHINE_CONDITIONNEMENT_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C007447">
+          <End Role="MACHINE_FABRICATION" Type="Self.MACHINE_FABRICATION" Multiplicity="0..1" />
+          <End Role="VARIANTE" Type="Self.VARIANTE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MACHINE_FABRICATION">
+              <PropertyRef Name="MACHINE_FABRICATION_ID" />
+            </Principal>
+            <Dependent Role="VARIANTE">
+              <PropertyRef Name="MACHINE_FABRICATION_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="PalaisDuBonbonEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="BONBONs" EntityType="Self.BONBON" />
+          <EntitySet Name="CARTONs" EntityType="Self.CARTON" />
+          <EntitySet Name="CARTON_INFO" EntityType="Self.CARTON_INFO" />
+          <EntitySet Name="COMMANDEs" EntityType="Self.COMMANDE" />
+          <EntitySet Name="CONDITIONNEMENTs" EntityType="Self.CONDITIONNEMENT" />
+          <EntitySet Name="MACHINE_CONDITIONNEMENT" EntityType="Self.MACHINE_CONDITIONNEMENT" />
+          <EntitySet Name="MACHINE_FABRICATION" EntityType="Self.MACHINE_FABRICATION" />
+          <EntitySet Name="PAYS" EntityType="PalaisDuBonbon_DataModel.PAYS" />
+          <EntitySet Name="PRIX_LOT" EntityType="Self.PRIX_LOT" />
+          <EntitySet Name="RECETTEs" EntityType="Self.RECETTE" />
+          <EntitySet Name="TRANSPORT_INFO" EntityType="Self.TRANSPORT_INFO" />
+          <EntitySet Name="VARIANTEs" EntityType="Self.VARIANTE" />
+          <AssociationSet Name="SYS_C007445" Association="Self.SYS_C007445">
+            <End Role="BONBON" EntitySet="BONBONs" />
+            <End Role="PRIX_LOT" EntitySet="PRIX_LOT" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C007450" Association="Self.SYS_C007450">
+            <End Role="BONBON" EntitySet="BONBONs" />
+            <End Role="COMMANDE" EntitySet="COMMANDEs" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C007453" Association="Self.SYS_C007453">
+            <End Role="VARIANTE" EntitySet="VARIANTEs" />
+            <End Role="BONBON" EntitySet="BONBONs" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C007452" Association="Self.SYS_C007452">
+            <End Role="COMMANDE" EntitySet="COMMANDEs" />
+            <End Role="CARTON" EntitySet="CARTONs" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C007449" Association="Self.SYS_C007449">
+            <End Role="PAYS" EntitySet="PAYS" />
+            <End Role="COMMANDE" EntitySet="COMMANDEs" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C007451" Association="Self.SYS_C007451">
+            <End Role="CONDITIONNEMENT" EntitySet="CONDITIONNEMENTs" />
+            <End Role="COMMANDE" EntitySet="COMMANDEs" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C007446" Association="Self.SYS_C007446">
+            <End Role="CONDITIONNEMENT" EntitySet="CONDITIONNEMENTs" />
+            <End Role="PRIX_LOT" EntitySet="PRIX_LOT" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C007448" Association="Self.SYS_C007448">
+            <End Role="MACHINE_CONDITIONNEMENT" EntitySet="MACHINE_CONDITIONNEMENT" />
+            <End Role="CONDITIONNEMENT" EntitySet="CONDITIONNEMENTs" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C007447" Association="Self.SYS_C007447">
+            <End Role="MACHINE_FABRICATION" EntitySet="MACHINE_FABRICATION" />
+            <End Role="VARIANTE" EntitySet="VARIANTEs" />
+          </AssociationSet>
+          <EntitySet Name="TAUX_VENTES" EntityType="PalaisDuBonbon_DataModel.TAUX_VENTES" />
+          <EntitySet Name="COUTS" EntityType="PalaisDuBonbon_DataModel.COUT" />
+        </EntityContainer>
+        <EntityType Name="TAUX_VENTES">
+          <Key>
+            <PropertyRef Name="TAUX_VENTE_ID" />
+          </Key>
+          <Property Name="TAUX_VENTE_ID" Type="Int32" Nullable="false" />
+          <Property Name="TAUX_VENTE_BONBON" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="TAUX_VENTE_ANNEE" Type="Int32" />
+          <Property Name="TAUX_VENTE_VALEUR" Type="Decimal" Precision="16" Scale="0" />
+        </EntityType>
+        <EntityType Name="COUT">
+          <Key>
+            <PropertyRef Name="COUT_ID" />
+          </Key>
+          <Property Name="COUT_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="COUT_TYPE_BONBON" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="COUT_FABRICATION" Type="Int32" />
+          <Property Name="COUT_CONDITIONNEMENT" Type="Int32" />
+          <Property Name="COUT_EXPEDITION" Type="Int32" />
+          <Property Name="COUT_GENERAL" Type="Int32" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="PalaisDuBonbon_DataModelStoreContainer" CdmEntityContainer="PalaisDuBonbonEntities">
+          <EntitySetMapping Name="BONBONs">
+            <EntityTypeMapping TypeName="PalaisDuBonbon_DataModel.BONBON">
+              <MappingFragment StoreEntitySet="BONBON">
+                <ScalarProperty Name="BONBON_ID" ColumnName="BONBON_ID" />
+                <ScalarProperty Name="BONBON_TYPE" ColumnName="BONBON_TYPE" />
+                <ScalarProperty Name="BONBON_TEXTURE" ColumnName="BONBON_TEXTURE" />
+                <ScalarProperty Name="BONBON_COULEUR" ColumnName="BONBON_COULEUR" />
+                <ScalarProperty Name="VARIANTE_ID" ColumnName="VARIANTE_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CARTONs">
+            <EntityTypeMapping TypeName="PalaisDuBonbon_DataModel.CARTON">
+              <MappingFragment StoreEntitySet="CARTON">
+                <ScalarProperty Name="CARTON_ID" ColumnName="CARTON_ID" />
+                <ScalarProperty Name="CARTON_QUANTITE_LOT" ColumnName="CARTON_QUANTITE_LOT" />
+                <ScalarProperty Name="CARTON_ID_GARE" ColumnName="CARTON_ID_GARE" />
+                <ScalarProperty Name="COMMANDE_ID" ColumnName="COMMANDE_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CARTON_INFO">
+            <EntityTypeMapping TypeName="PalaisDuBonbon_DataModel.CARTON_INFO">
+              <MappingFragment StoreEntitySet="CARTON_INFO">
+                <ScalarProperty Name="CARTON_INFO_ID" ColumnName="CARTON_INFO_ID" />
+                <ScalarProperty Name="CARTON_INFO_TYPE_CONDITIONNEMENT" ColumnName="CARTON_INFO_TYPE_CONDITIONNEMENT" />
+                <ScalarProperty Name="CARTON_INFO_QUANTITE" ColumnName="CARTON_INFO_QUANTITE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="COMMANDEs">
+            <EntityTypeMapping TypeName="PalaisDuBonbon_DataModel.COMMANDE">
+              <MappingFragment StoreEntitySet="COMMANDE">
+                <ScalarProperty Name="COMMANDE_QUANTITE" ColumnName="COMMANDE_QUANTITE" />
+                <ScalarProperty Name="COMMANDE_ID" ColumnName="COMMANDE_ID" />
+                <ScalarProperty Name="COMMANDE_NUM_COMMANDE" ColumnName="COMMANDE_NUM_COMMANDE" />
+                <ScalarProperty Name="COMMANDE_ETAT" ColumnName="COMMANDE_ETAT" />
+                <ScalarProperty Name="COMMANDE_DATE_COMMANDE" ColumnName="COMMANDE_DATE_COMMANDE" />
+                <ScalarProperty Name="COMMANDE_DATE_FABRICATION" ColumnName="COMMANDE_DATE_FABRICATION" />
+                <ScalarProperty Name="COMMANDE_DATE_CONDITIONNEMENT" ColumnName="COMMANDE_DATE_CONDITIONNEMENT" />
+                <ScalarProperty Name="COMMANDE_DATE_EXPEDITION" ColumnName="COMMANDE_DATE_EXPEDITION" />
+                <ScalarProperty Name="COMMANDE_PRIX_LOT" ColumnName="COMMANDE_PRIX_LOT" />
+                <ScalarProperty Name="COMMANDE_CARTON" ColumnName="COMMANDE_CARTON" />
+                <ScalarProperty Name="PAYS_ID" ColumnName="PAYS_ID" />
+                <ScalarProperty Name="BONBON_ID" ColumnName="BONBON_ID" />
+                <ScalarProperty Name="CONDITIONNEMENT_ID" ColumnName="CONDITIONNEMENT_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CONDITIONNEMENTs">
+            <EntityTypeMapping TypeName="PalaisDuBonbon_DataModel.CONDITIONNEMENT">
+              <MappingFragment StoreEntitySet="CONDITIONNEMENT">
+                <ScalarProperty Name="CONDITIONNEMENT_NOM" ColumnName="CONDITIONNEMENT_NOM" />
+                <ScalarProperty Name="CONDITIONNEMENT_ID" ColumnName="CONDITIONNEMENT_ID" />
+                <ScalarProperty Name="CONDITIONNEMENT_QUANTITE_MAX" ColumnName="CONDITIONNEMENT_QUANTITE_MAX" />
+                <ScalarProperty Name="MACHINE_CONDITIONNEMENT_ID" ColumnName="MACHINE_CONDITIONNEMENT_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MACHINE_CONDITIONNEMENT">
+            <EntityTypeMapping TypeName="PalaisDuBonbon_DataModel.MACHINE_CONDITIONNEMENT">
+              <MappingFragment StoreEntitySet="MACHINE_CONDITIONNEMENT">
+                <ScalarProperty Name="MACHINE_CONDITIONNEMENT_ID" ColumnName="MACHINE_CONDITIONNEMENT_ID" />
+                <ScalarProperty Name="MACHINE_CONDITIONNEMENT_CADENCE" ColumnName="MACHINE_CONDITIONNEMENT_CADENCE" />
+                <ScalarProperty Name="MACHINE_CONDITIONNEMENT_CHANGEMENT_OUTIL" ColumnName="MACHINE_CONDITIONNEMENT_CHANGEMENT_OUTIL" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MACHINE_FABRICATION">
+            <EntityTypeMapping TypeName="PalaisDuBonbon_DataModel.MACHINE_FABRICATION">
+              <MappingFragment StoreEntitySet="MACHINE_FABRICATION">
+                <ScalarProperty Name="MACHINE_FABRICATION_ID" ColumnName="MACHINE_FABRICATION_ID" />
+                <ScalarProperty Name="MACHINE_FABRICATION_CHANGEMENT_OUTIL" ColumnName="MACHINE_FABRICATION_CHANGEMENT_OUTIL" />
+                <ScalarProperty Name="MACHINE_FABRICATION_CADENCE" ColumnName="MACHINE_FABRICATION_CADENCE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PAYS">
+            <EntityTypeMapping TypeName="PalaisDuBonbon_DataModel.PAYS">
+              <MappingFragment StoreEntitySet="PAYS">
+                <ScalarProperty Name="PAYS_RATIO_COMMANDE" ColumnName="PAYS_RATIO_COMMANDE" />
+                <ScalarProperty Name="RATIO_COMMANDE" ColumnName="RATIO_COMMANDE" />
+                <ScalarProperty Name="PAYS_ID" ColumnName="PAYS_ID" />
+                <ScalarProperty Name="PAYS_NOM" ColumnName="PAYS_NOM" />
+                <ScalarProperty Name="PAYS_TRANSPORT" ColumnName="PAYS_TRANSPORT" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PRIX_LOT">
+            <EntityTypeMapping TypeName="PalaisDuBonbon_DataModel.PRIX_LOT">
+              <MappingFragment StoreEntitySet="PRIX_LOT">
+                <ScalarProperty Name="PRIX_LOT_ID" ColumnName="PRIX_LOT_ID" />
+                <ScalarProperty Name="PRIX_LOT_PRIX" ColumnName="PRIX_LOT_PRIX" />
+                <ScalarProperty Name="BONBON_ID" ColumnName="BONBON_ID" />
+                <ScalarProperty Name="CONDITIONNEMENT_ID" ColumnName="CONDITIONNEMENT_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RECETTEs">
+            <EntityTypeMapping TypeName="PalaisDuBonbon_DataModel.RECETTE">
+              <MappingFragment StoreEntitySet="RECETTE">
+                <ScalarProperty Name="RECETTE_ID" ColumnName="RECETTE_ID" />
+                <ScalarProperty Name="RECETTE_TYPE" ColumnName="RECETTE_TYPE" />
+                <ScalarProperty Name="RECETTE_ADDITIF" ColumnName="RECETTE_ADDITIF" />
+                <ScalarProperty Name="RECETTE_ENROBAGE" ColumnName="RECETTE_ENROBAGE" />
+                <ScalarProperty Name="RECETTE_GELIFIANT" ColumnName="RECETTE_GELIFIANT" />
+                <ScalarProperty Name="RECETTE_AROME" ColumnName="RECETTE_AROME" />
+                <ScalarProperty Name="RECETTE_SUCRE" ColumnName="RECETTE_SUCRE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TRANSPORT_INFO">
+            <EntityTypeMapping TypeName="PalaisDuBonbon_DataModel.TRANSPORT_INFO">
+              <MappingFragment StoreEntitySet="TRANSPORT_INFO">
+                <ScalarProperty Name="TRANSPORT_INFO_ID" ColumnName="TRANSPORT_INFO_ID" />
+                <ScalarProperty Name="TRANSPORT_INFO_TYPE_TRANSPORT" ColumnName="TRANSPORT_INFO_TYPE_TRANSPORT" />
+                <ScalarProperty Name="TRANSPORT_INFO_QUANTITE_PALETTE" ColumnName="TRANSPORT_INFO_QUANTITE_PALETTE" />
+                <ScalarProperty Name="TRANSPORT_INFO_CARTON_PAR_PALETTE" ColumnName="TRANSPORT_INFO_CARTON_PAR_PALETTE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VARIANTEs">
+            <EntityTypeMapping TypeName="PalaisDuBonbon_DataModel.VARIANTE">
+              <MappingFragment StoreEntitySet="VARIANTE">
+                <ScalarProperty Name="VARIANTE_ID" ColumnName="VARIANTE_ID" />
+                <ScalarProperty Name="VARIANTE_NOM" ColumnName="VARIANTE_NOM" />
+                <ScalarProperty Name="MACHINE_FABRICATION_ID" ColumnName="MACHINE_FABRICATION_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TAUX_VENTES">
+            <EntityTypeMapping TypeName="PalaisDuBonbon_DataModel.TAUX_VENTES">
+              <MappingFragment StoreEntitySet="TAUX_VENTES">
+                <ScalarProperty Name="TAUX_VENTE_VALEUR" ColumnName="TAUX_VENTE_VALEUR" />
+                <ScalarProperty Name="TAUX_VENTE_ANNEE" ColumnName="TAUX_VENTE_ANNEE" />
+                <ScalarProperty Name="TAUX_VENTE_BONBON" ColumnName="TAUX_VENTE_BONBON" />
+                <ScalarProperty Name="TAUX_VENTE_ID" ColumnName="TAUX_VENTE_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="COUTS">
+            <EntityTypeMapping TypeName="PalaisDuBonbon_DataModel.COUT">
+              <MappingFragment StoreEntitySet="COUTS">
+                <ScalarProperty Name="COUT_GENERAL" ColumnName="COUT_GENERAL" />
+                <ScalarProperty Name="COUT_EXPEDITION" ColumnName="COUT_EXPEDITION" />
+                <ScalarProperty Name="COUT_CONDITIONNEMENT" ColumnName="COUT_CONDITIONNEMENT" />
+                <ScalarProperty Name="COUT_FABRICATION" ColumnName="COUT_FABRICATION" />
+                <ScalarProperty Name="COUT_TYPE_BONBON" ColumnName="COUT_TYPE_BONBON" />
+                <ScalarProperty Name="COUT_ID" ColumnName="COUT_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Aucun" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

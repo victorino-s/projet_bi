@@ -1,6 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Mapping xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs" Space="C-S">
-  <Alias Key="Model" Value="PDB_ORACLE_MODEL" />
-  <Alias Key="Target" Value="PDB_ORACLE_MODEL.Store" />
-  <EntityContainerMapping CdmEntityContainer="PDB_ORACLE_MODELContainer" StorageEntityContainer="PDB_ORACLE_MODELTargetContainer" />
-</Mapping>
