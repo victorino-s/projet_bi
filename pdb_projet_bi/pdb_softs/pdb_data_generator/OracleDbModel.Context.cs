@@ -32,7 +32,7 @@ namespace pdb_data_generator
         public virtual DbSet<CONDITIONNEMENT> CONDITIONNEMENTs { get; set; }
         public virtual DbSet<MACHINE_CONDITIONNEMENT> MACHINE_CONDITIONNEMENT { get; set; }
         public virtual DbSet<MACHINE_FABRICATION> MACHINE_FABRICATION { get; set; }
-        public virtual DbSet<PAY> PAYS { get; set; }
+        public virtual DbSet<PAYS> PAYS { get; set; }
         public virtual DbSet<PRIX_LOT> PRIX_LOT { get; set; }
         public virtual DbSet<RECETTE> RECETTEs { get; set; }
         public virtual DbSet<TRANSPORT_INFO> TRANSPORT_INFO { get; set; }

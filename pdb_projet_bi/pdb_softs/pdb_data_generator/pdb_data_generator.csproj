@@ -102,7 +102,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>OracleDbModel.edmx</DependentUpon>
     </Compile>
-    <Compile Include="PAY.cs">
+    <Compile Include="PAYS.cs">
       <DependentUpon>OracleDbModel.tt</DependentUpon>
     </Compile>
     <Compile Include="PRIX_LOT.cs">

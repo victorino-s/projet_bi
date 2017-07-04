@@ -76,6 +76,7 @@
     <Property Name="PAYS_ID" Type="number" Precision="10" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="PAYS_NOM" Type="varchar2" MaxLength="100" />
     <Property Name="PAYS_TRANSPORT" Type="varchar2" MaxLength="100" />
+    <Property Name="RATIO_COMMANDE" Type="varchar2" MaxLength="45" />
   </EntityType>
   <EntityType Name="PRIX_LOT">
     <Key>

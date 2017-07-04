@@ -78,8 +78,9 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="PAYS">
-      <EntityTypeMapping TypeName="PalaisDuBonbon_DataModel.PAY">
+      <EntityTypeMapping TypeName="PalaisDuBonbon_DataModel.PAYS">
         <MappingFragment StoreEntitySet="PAYS">
+          <ScalarProperty Name="RATIO_COMMANDE" ColumnName="RATIO_COMMANDE" />
           <ScalarProperty Name="PAYS_ID" ColumnName="PAYS_ID" />
           <ScalarProperty Name="PAYS_NOM" ColumnName="PAYS_NOM" />
           <ScalarProperty Name="PAYS_TRANSPORT" ColumnName="PAYS_TRANSPORT" />

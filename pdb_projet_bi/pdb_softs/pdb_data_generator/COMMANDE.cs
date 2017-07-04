@@ -36,7 +36,7 @@ namespace pdb_data_generator
         public virtual BONBON BONBON { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CARTON> CARTONs { get; set; }
-        public virtual PAY PAY { get; set; }
+        public virtual PAYS PAY { get; set; }
         public virtual CONDITIONNEMENT CONDITIONNEMENT { get; set; }
     }
 }

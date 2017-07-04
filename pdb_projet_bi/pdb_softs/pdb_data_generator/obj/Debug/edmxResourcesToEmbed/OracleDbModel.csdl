@@ -82,7 +82,7 @@
     <Property Name="MACHINE_FABRICATION_CADENCE" Type="Int32" />
     <NavigationProperty Name="VARIANTEs" Relationship="Self.SYS_C007447" FromRole="MACHINE_FABRICATION" ToRole="VARIANTE" />
   </EntityType>
-  <EntityType Name="PAY">
+  <EntityType Name="PAYS">
     <Key>
       <PropertyRef Name="PAYS_ID" />
     </Key>
@@ -90,6 +90,7 @@
     <Property Name="PAYS_NOM" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
     <Property Name="PAYS_TRANSPORT" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="COMMANDEs" Relationship="Self.SYS_C007449" FromRole="PAYS" ToRole="COMMANDE" />
+    <Property Name="RATIO_COMMANDE" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
   </EntityType>
   <EntityType Name="PRIX_LOT">
     <Key>
@@ -182,7 +183,7 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="SYS_C007449">
-    <End Role="PAYS" Type="Self.PAY" Multiplicity="0..1" />
+    <End Role="PAYS" Type="PalaisDuBonbon_DataModel.PAYS" Multiplicity="0..1" />
     <End Role="COMMANDE" Type="Self.COMMANDE" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="PAYS">
@@ -249,7 +250,7 @@
     <EntitySet Name="CONDITIONNEMENTs" EntityType="Self.CONDITIONNEMENT" />
     <EntitySet Name="MACHINE_CONDITIONNEMENT" EntityType="Self.MACHINE_CONDITIONNEMENT" />
     <EntitySet Name="MACHINE_FABRICATION" EntityType="Self.MACHINE_FABRICATION" />
-    <EntitySet Name="PAYS" EntityType="Self.PAY" />
+    <EntitySet Name="PAYS" EntityType="PalaisDuBonbon_DataModel.PAYS" />
     <EntitySet Name="PRIX_LOT" EntityType="Self.PRIX_LOT" />
     <EntitySet Name="RECETTEs" EntityType="Self.RECETTE" />
     <EntitySet Name="TRANSPORT_INFO" EntityType="Self.TRANSPORT_INFO" />

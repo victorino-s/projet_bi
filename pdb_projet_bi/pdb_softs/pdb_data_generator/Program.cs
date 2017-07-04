@@ -16,7 +16,13 @@ namespace pdb_data_generator
             Utils.Initialize_TransportInfoData(); 
             */
             //Utils.Initialize_PaysData();
-            Utils.Initialize_BonbonData();
+            //Utils.Initialize_BonbonData();
+            //Utils.Initialize_Pays_RatioCommandes();
+            //Utils.Initialize_CartonInfos();
+            //Utils.Initialize_Recettes();
+            //Utils.Initialize_PrixLots();
+
+            Utils.Initialize_MachinesConditionnement();
             Console.ReadLine();
         }
     }

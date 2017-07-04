@@ -1,8 +1,17 @@
 ﻿{
   "conditionnements": [
-    {"nom": "sachet", "quantite": 10},
-    {"nom": "boite", "quantite": 25},
-    {"nom": "echantillon", "quantite": 1}
+    {
+      "nom": "sachet",
+      "quantite": 10
+    },
+    {
+      "nom": "boite",
+      "quantite": 25
+    },
+    {
+      "nom": "echantillon",
+      "quantite": 1
+    }
   ],
   "types_bonbon": [
     "Acidofilo",
@@ -105,5 +114,502 @@
       "qte_carton_palette": 20
     }
 
+  ],
+  "ratio_commandes": [
+    8.11,
+    6.51,
+    9.84,
+    0.13,
+    0.02,
+    0.36,
+    3.63,
+    4.51,
+    0.15,
+    2.87,
+    29.63,
+    0.16,
+    0.12,
+    5.10,
+    4.12,
+    0.89,
+    0.97,
+    3.65,
+    0.15,
+    2.20,
+    0.91,
+    1.20,
+    0.51,
+    0.10,
+    3.84,
+    0.16,
+    0.84,
+    1.01,
+    4.50,
+    1.74,
+    0.13,
+    0.01,
+    1.10,
+    0.83
+  ],
+  "carton_infos": [
+    {
+      "type": "sachet",
+      "quantite": 20
+    },
+    {
+      "type": "boite",
+      "quantite": 10
+    },
+    {
+      "type": "echantillon",
+      "quantite": 200
+    }
+  ],
+  "recettes": [
+    {
+      "type": "Acidofilo",
+      "additifs": 6,
+      "enrobage": 7,
+      "arome": 7,
+      "gelifiant": 7,
+      "sucre": 1
+    },
+    {
+      "type": "Bouteille Cola",
+      "additifs": 10,
+      "enrobage": 9,
+      "arome": 7,
+      "gelifiant": 1,
+      "sucre": 10
+    },
+    {
+      "type": "Brazil Pik",
+      "additifs": 3,
+      "enrobage": 1,
+      "arome": 4,
+      "gelifiant": 4,
+      "sucre": 10
+    },
+    {
+      "type": "Color Schtroumpf Pik",
+      "additifs": 6,
+      "enrobage": 5,
+      "arome": 7,
+      "gelifiant": 8,
+      "sucre": 7
+    },
+    {
+      "type": "Langues Acides",
+      "additifs": 4,
+      "enrobage": 10,
+      "arome": 9,
+      "gelifiant": 7,
+      "sucre": 2
+    },
+    {
+      "type": "London Pik",
+      "additifs": 9,
+      "enrobage": 7,
+      "arome": 1,
+      "gelifiant": 2,
+      "sucre": 8
+    },
+    {
+      "type": "Miami Pik",
+      "additifs": 3,
+      "enrobage": 8,
+      "arome": 9,
+      "gelifiant": 2,
+      "sucre": 2
+    },
+    {
+      "type": "Pasta Basta",
+      "additifs": 4,
+      "enrobage": 8,
+      "arome": 7,
+      "gelifiant": 6,
+      "sucre": 8
+    },
+    {
+      "type": "Pasta Frutta",
+      "additifs": 8,
+      "enrobage": 5,
+      "arome": 6,
+      "gelifiant": 8,
+      "sucre": 9
+    },
+    {
+      "type": "Sour Snup",
+      "additifs": 7,
+      "enrobage": 4,
+      "arome": 1,
+      "gelifiant": 9,
+      "sucre": 8
+    },
+    {
+      "type": "Dragibus",
+      "additifs": 5,
+      "enrobage": 8,
+      "arome": 6,
+      "gelifiant": 9,
+      "sucre": 7
+    },
+    {
+      "type": "Carensac",
+      "additifs": 2,
+      "enrobage": 9,
+      "arome": 4,
+      "gelifiant": 9,
+      "sucre": 2
+    },
+    {
+      "type": "Fraizibus",
+      "additifs": 10,
+      "enrobage": 10,
+      "arome": 5,
+      "gelifiant": 5,
+      "sucre": 4
+    },
+    {
+      "type": "Grain de millet",
+      "additifs": 3,
+      "enrobage": 5,
+      "arome": 4,
+      "gelifiant": 3,
+      "sucre": 3
+    },
+    {
+      "type": "Starmint",
+      "additifs": 9,
+      "enrobage": 9,
+      "arome": 4,
+      "gelifiant": 1,
+      "sucre": 10
+    },
+    {
+      "type": "Florent Violette",
+      "additifs": 3,
+      "enrobage": 2,
+      "arome": 7,
+      "gelifiant": 9,
+      "sucre": 2
+    },
+    {
+      "type": "Kimono",
+      "additifs": 7,
+      "enrobage": 7,
+      "arome": 5,
+      "gelifiant": 10,
+      "sucre": 3
+    },
+    {
+      "type": "Pain Zan",
+      "additifs": 7,
+      "enrobage": 3,
+      "arome": 9,
+      "gelifiant": 9,
+      "sucre": 8
+    },
+    {
+      "type": "Rotella",
+      "additifs": 5,
+      "enrobage": 3,
+      "arome": 2,
+      "gelifiant": 4,
+      "sucre": 3
+    },
+    {
+      "type": "Zanoïd",
+      "additifs": 10,
+      "enrobage": 7,
+      "arome": 7,
+      "gelifiant": 6,
+      "sucre": 4
+    },
+    {
+      "type": "Fraise Tagada",
+      "additifs": 1,
+      "enrobage": 3,
+      "arome": 7,
+      "gelifiant": 2,
+      "sucre": 8
+    },
+    {
+      "type": "Croco",
+      "additifs": 9,
+      "enrobage": 4,
+      "arome": 3,
+      "gelifiant": 10,
+      "sucre": 8
+    },
+    {
+      "type": "Chamallows",
+      "additifs": 4,
+      "enrobage": 9,
+      "arome": 1,
+      "gelifiant": 2,
+      "sucre": 10
+    },
+    {
+      "type": "Polka",
+      "additifs": 7,
+      "enrobage": 1,
+      "arome": 2,
+      "gelifiant": 10,
+      "sucre": 4
+    },
+    {
+      "type": "Banane",
+      "additifs": 5,
+      "enrobage": 10,
+      "arome": 5,
+      "gelifiant": 8,
+      "sucre": 10
+    },
+    {
+      "type": "Ourson",
+      "additifs": 6,
+      "enrobage": 7,
+      "arome": 1,
+      "gelifiant": 3,
+      "sucre": 3
+    },
+    {
+      "type": "Filament",
+      "additifs": 2,
+      "enrobage": 3,
+      "arome": 3,
+      "gelifiant": 9,
+      "sucre": 6
+    }
+  ],
+  "prix_lots_info": [
+    {
+      "type": "Acidofilo",
+      "sachet": 2.31,
+      "boite": 3.42,
+      "echantillon": 0.23
+    },
+    {
+      "type": "Bouteille Cola",
+      "sachet": 2.99,
+      "boite": 4.43,
+      "echantillon": 0.3
+    },
+    {
+      "type": "Brazil Pik",
+      "sachet": 3.94,
+      "boite": 5.83,
+      "echantillon": 0.39
+    },
+    {
+      "type": "Color Schtroumpf Pik",
+      "sachet": 2.75,
+      "boite": 4.07,
+      "echantillon": 0.28
+    },
+    {
+      "type": "Langues Acides",
+      "sachet": 3.84,
+      "boite": 5.68,
+      "echantillon": 0.38
+    },
+    {
+      "type": "London Pik",
+      "sachet": 3.08,
+      "boite": 4.56,
+      "echantillon": 0.31
+    },
+    {
+      "type": "Miami Pik",
+      "sachet": 2.93,
+      "boite": 4.34,
+      "echantillon": 0.29
+    },
+    {
+      "type": "Pasta Basta",
+      "sachet": 2.11,
+      "boite": 3.12,
+      "echantillon": 0.21
+    },
+    {
+      "type": "Pasta Frutta",
+      "sachet": 2.37,
+      "boite": 3.51,
+      "echantillon": 0.24
+    },
+    {
+      "type": "Sour Snup",
+      "sachet": 3.66,
+      "boite": 5.42,
+      "echantillon": 0.37
+    },
+    {
+      "type": "Dragibus",
+      "sachet": 2.47,
+      "boite": 3.66,
+      "echantillon": 0.25
+    },
+    {
+      "type": "Carensac",
+      "sachet": 2.05,
+      "boite": 3.03,
+      "echantillon": 0.21
+    },
+    {
+      "type": "Fraizibus",
+      "sachet": 3.92,
+      "boite": 5.8,
+      "echantillon": 0.39
+    },
+    {
+      "type": "Grain de millet",
+      "sachet": 2.16,
+      "boite": 3.2,
+      "echantillon": 0.22
+    },
+    {
+      "type": "Starmint",
+      "sachet": 2.49,
+      "boite": 3.69,
+      "echantillon": 0.25
+    },
+    {
+      "type": "Florent Violette",
+      "sachet": 3.47,
+      "boite": 5.14,
+      "echantillon": 0.35
+    },
+    {
+      "type": "Kimono",
+      "sachet": 3.92,
+      "boite": 5.8,
+      "echantillon": 0.39
+    },
+    {
+      "type": "Pain Zan",
+      "sachet": 3.17,
+      "boite": 4.69,
+      "echantillon": 0.32
+    },
+    {
+      "type": "Rotella",
+      "sachet": 2.27,
+      "boite": 3.36,
+      "echantillon": 0.23
+    },
+    {
+      "type": "Zanoïd",
+      "sachet": 3.25,
+      "boite": 4.81,
+      "echantillon": 0.33
+    },
+    {
+      "type": "Fraise Tagada",
+      "sachet": 2.9,
+      "boite": 4.29,
+      "echantillon": 0.29
+    },
+    {
+      "type": "Croco",
+      "sachet": 2.36,
+      "boite": 3.49,
+      "echantillon": 0.24
+    },
+    {
+      "type": "Chamallows",
+      "sachet": 2.04,
+      "boite": 3.02,
+      "echantillon": 0.2
+    },
+    {
+      "type": "Polka",
+      "sachet": 3.77,
+      "boite": 5.58,
+      "echantillon": 0.38
+    },
+    {
+      "type": "Banane",
+      "sachet": 2.74,
+      "boite": 4.06,
+      "echantillon": 0.27
+    },
+    {
+      "type": "Ourson",
+      "sachet": 3.59,
+      "boite": 5.31,
+      "echantillon": 0.36
+    },
+    {
+      "type": "Filament",
+      "sachet": 3.99,
+      "boite": 5.91,
+      "echantillon": 0.4
+    }
+  ],
+  "machines_fabrication": [
+    {
+      "_id": 1,
+      "variante": [ "acide" ],
+      "cadence": [ 750 ],
+      "changement_outil": [ 25 ]
+    },
+    {
+      "_id": 2,
+      "variante": [ "sucre" ],
+      "cadence": [ 1230 ],
+      "changement_outil": [ 45 ]
+    },
+    {
+      "_id": 3,
+      "variante": [ "gelifie" ],
+      "cadence": [ 625 ],
+      "changement_outil": [ 25 ]
+    },
+    {
+      "_id": 4,
+      "variante": [ "sucre", "gelifie" ],
+      "cadence": [ 1230, 625 ],
+      "changement_outil": [ 45, 25 ]
+    }
+  ],
+  "machines_conditionnement": [
+    {
+      "_id": 1,
+      "conditionnement": "sachet",
+      "cadence": 500,
+      "changement_outil": 15
+    },
+    {
+      "_id": 2,
+      "conditionnement": "sachet",
+      "cadence": 500,
+      "changement_outil": 15
+    },
+    {
+      "_id": 3,
+      "conditionnement": "sachet",
+      "cadence": 750,
+      "changement_outil": 25
+    },
+    {
+      "_id": 4,
+      "conditionnement": "boite",
+      "cadence": 200,
+      "changement_outil": 10
+    },
+    {
+      "_id": 5,
+      "conditionnement": "boite",
+      "cadence": 200,
+      "changement_outil": 10
+    },
+    {
+      "_id": 6,
+      "conditionnement": "echantillon",
+      "cadence": 150,
+      "changement_outil": 15
+    }
   ]
+
 }

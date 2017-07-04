@@ -22,7 +22,7 @@ namespace pdb_data_generator
             return JsonConvert.DeserializeObject(GetFactoryData());
         }
 
-        public static void Initialize_VariantesData()
+        static void Initialize_VariantesData()
         {
             var data = GetFactoryDataJSON().variantes;
 
@@ -43,7 +43,7 @@ namespace pdb_data_generator
             }
         }
 
-        public static void Initialize_ConditionnementData()
+        static void Initialize_ConditionnementData()
         {
             var data = GetFactoryDataJSON().conditionnements;
 
@@ -65,7 +65,7 @@ namespace pdb_data_generator
             }
         }
 
-        public static void Initialize_TransportInfoData()
+        static void Initialize_TransportInfoData()
         {
             var data = GetFactoryDataJSON().transports;
 
@@ -95,7 +95,7 @@ namespace pdb_data_generator
         /// TO DO : Secure the function with checking on opening the connexion if Transport Table already exists,
         /// if not, execute the Initialize_TransportInfo Method.
         /// </summary>
-        public static void Initialize_PaysData()
+        static void Initialize_PaysData()
         {
             var data = GetFactoryDataJSON().pays;
 
@@ -117,14 +117,14 @@ namespace pdb_data_generator
 
                 foreach (var d in data)
                 {
-                    PAY p= new PAY();
+                    PAYS p = new PAYS();
                     p.PAYS_NOM = d.Value;
 
-                    if(transports_bateau.Contains(d.Value))
+                    if (transports_bateau.Contains(d.Value))
                     {
                         p.PAYS_TRANSPORT = "bateau";
                     }
-                    else if(transports_avion.Contains(d.Value))
+                    else if (transports_avion.Contains(d.Value))
                     {
                         p.PAYS_TRANSPORT = "avion";
                     }
@@ -132,11 +132,11 @@ namespace pdb_data_generator
                     {
                         p.PAYS_TRANSPORT = "camion";
                     }
-                    
+
                     context.PAYS.Add(p);
                     Console.WriteLine("-------- Data Added : (" + c + "/" + data.Count + ")");
                     c++;
-                   
+
                 }
 
                 context.SaveChanges();
@@ -150,7 +150,7 @@ namespace pdb_data_generator
         /// TO DO : Secure the function with checking on opening the connexion if Variante Table already exists,
         /// if not, execute the Initialize_VarianteData Method.
         /// </summary>
-        public static void Initialize_BonbonData()
+        static void Initialize_BonbonData()
         {
             var data = GetFactoryDataJSON();
             var data_types_bonbons = data.types_bonbon;
@@ -166,11 +166,11 @@ namespace pdb_data_generator
                 int c = 1;
                 foreach (var type_bonbon in data_types_bonbons)
                 {
-                    foreach(var texture in data_textures)
+                    foreach (var texture in data_textures)
                     {
-                        foreach(var couleur in data_couleurs)
+                        foreach (var couleur in data_couleurs)
                         {
-                            foreach(var variante in data_variantes)
+                            foreach (var variante in data_variantes)
                             {
                                 string _variante = variante;
                                 BONBON bonbon = new BONBON();
@@ -187,7 +187,7 @@ namespace pdb_data_generator
                                 context.BONBONs.Add(bonbon);
                                 Console.WriteLine("-------- Data Added : (" + c + "/" + data_count + ")");
                                 c++;
-                                if(c % 100 == 0)
+                                if (c % 100 == 0)
                                 {
                                     Console.WriteLine("Pushing to Database...");
                                     context.SaveChanges();
@@ -201,6 +201,189 @@ namespace pdb_data_generator
             }
         }
 
+        static void Initialize_Pays_RatioCommandes()
+        {
+            var data = GetFactoryDataJSON().ratio_commandes;
+
+            using (var context = new PalaisDuBonbonEntities())
+            {
+
+                Console.WriteLine("---- Initialize Pays Table (RatioCommandes) : Data To Procces : " + data.Count);
+                int c = 1;
+
+                int i = 0;
+                foreach (PAYS p in context.PAYS)
+                {
+                    p.RATIO_COMMANDE = data[i];
+                    i++;
+
+                    Console.WriteLine("-------- Data Added : (" + c + "/" + data.Count + ")");
+                    c++;
+                }
+
+                Console.WriteLine("---- Initialize Pays Table (RatioCommandes) : DONE ! ----");
+                context.SaveChanges();
+            }
+        }
+
+        static void Initialize_CartonInfos()
+        {
+            var data = GetFactoryDataJSON().carton_infos;
+
+            using (var context = new PalaisDuBonbonEntities())
+            {
+                Console.WriteLine("---- Initialize Carton_Info Table : Data To Procces : " + data.Count);
+                int c = 1;
+
+                foreach (var d in data)
+                {
+                    CARTON_INFO ci = new CARTON_INFO();
+                    ci.CARTON_INFO_TYPE_CONDITIONNEMENT = d.type;
+                    ci.CARTON_INFO_QUANTITE = d.quantite;
+                    context.CARTON_INFO.Add(ci);
+                    Console.WriteLine("-------- Data Added : (" + c + "/" + data.Count + ")");
+                    c++;
+                }
+
+                Console.WriteLine("---- Initialize Carton_Info Table : DONE ! ----");
+                context.SaveChanges();
+            }
+        }
+
+        static void Initialize_Recettes()
+        {
+            var data = GetFactoryDataJSON().recettes;
+
+            using (var context = new PalaisDuBonbonEntities())
+            {
+                Console.WriteLine("---- Initialize Recettes Table : Data To Procces : " + data.Count);
+                int c = 1;
+
+                foreach(var d in data)
+                {
+                    RECETTE r = new RECETTE();
+                    r.RECETTE_TYPE = d.type;
+                    r.RECETTE_ADDITIF = d.additifs;
+                    r.RECETTE_ENROBAGE = d.enrobage;
+                    r.RECETTE_AROME = d.arome;
+                    r.RECETTE_GELIFIANT = d.gelifiant;
+                    r.RECETTE_SUCRE = d.sucre;
+
+                    context.RECETTEs.Add(r);
+                    Console.WriteLine("-------- Data Added : (" + c + "/" + data.Count + ")");
+                    c++;
+                }
+                Console.WriteLine("---- Initialize Recettes Table : DONE ! ----");
+                context.SaveChanges();
+            }
+        }
+
+        static void Initialize_PrixLots()
+        {
+            var data = GetFactoryDataJSON().prix_lots_info;
+
+            using (var context = new PalaisDuBonbonEntities())
+            {
+                Console.WriteLine("---- Initialize Prix Lots Table : Data To Procces : " + data.Count * 3);
+                int c = 1;
+
+                foreach (var d in data)
+                {
+                    string lot_type = d.type;
+
+                    PRIX_LOT pl_sachet = new PRIX_LOT();
+                    pl_sachet.BONBON = context.BONBONs.FirstOrDefault(b => b.BONBON_TYPE == lot_type);
+                    pl_sachet.CONDITIONNEMENT = context.CONDITIONNEMENTs.FirstOrDefault(cond => cond.CONDITIONNEMENT_NOM == "sachet");
+                    pl_sachet.BONBON_ID = pl_sachet.BONBON.BONBON_ID;
+                    pl_sachet.CONDITIONNEMENT_ID = pl_sachet.CONDITIONNEMENT.CONDITIONNEMENT_ID;
+                    pl_sachet.PRIX_LOT_PRIX = d.sachet;
+                    context.PRIX_LOT.Add(pl_sachet);
+                    c++;
+                    Console.WriteLine("-------- Data Added : (" + c + "/" + data.Count + ")");
+
+                    PRIX_LOT pl_boite = new PRIX_LOT();
+                    pl_boite.BONBON = context.BONBONs.FirstOrDefault(b => b.BONBON_TYPE == lot_type);
+                    pl_boite.CONDITIONNEMENT = context.CONDITIONNEMENTs.FirstOrDefault(cond => cond.CONDITIONNEMENT_NOM == "boite");
+                    pl_boite.BONBON_ID = pl_boite.BONBON.BONBON_ID;
+                    pl_boite.CONDITIONNEMENT_ID = pl_boite.CONDITIONNEMENT.CONDITIONNEMENT_ID;
+                    pl_boite.PRIX_LOT_PRIX = d.boite;
+                    context.PRIX_LOT.Add(pl_boite);
+                    c++;
+                    Console.WriteLine("-------- Data Added : (" + c + "/" + data.Count + ")");
+
+                    PRIX_LOT pl_echantillon = new PRIX_LOT();
+                    pl_echantillon.BONBON = context.BONBONs.FirstOrDefault(b => b.BONBON_TYPE == lot_type);
+                    pl_echantillon.CONDITIONNEMENT = context.CONDITIONNEMENTs.FirstOrDefault(cond => cond.CONDITIONNEMENT_NOM == "echantillon");
+                    pl_echantillon.BONBON_ID = pl_echantillon.BONBON.BONBON_ID;
+                    pl_echantillon.CONDITIONNEMENT_ID = pl_echantillon.CONDITIONNEMENT.CONDITIONNEMENT_ID;
+                    pl_echantillon.PRIX_LOT_PRIX = d.echantillon;
+                    context.PRIX_LOT.Add(pl_echantillon);
+                    c++;
+                    Console.WriteLine("-------- Data Added : (" + c + "/" + (data.Count * 3) + ")");
+
+                    if((c%100) == 0)
+                    {
+                        context.SaveChanges();
+                    }
+                }
+                context.SaveChanges();
+                Console.WriteLine("---- Initialize Prix Lots Table : DONE ! ----");
+            }
+        }
+
+        static void Initialize_MachinesFabrication()
+        {
+            // Nope ! Table is wrong
+        }
+
+        static void Initialize_MachinesConditionnement()
+        {
+            var data = GetFactoryDataJSON().machines_conditionnement;
+
+            using (var context = new PalaisDuBonbonEntities())
+            {
+                Console.WriteLine("---- Initialize MACHINE_CONDITIONNEMENT Table : Data To Procces : " + data.Count);
+                int data_counter = 1;
+                foreach(var d in data)
+                {
+                    MACHINE_CONDITIONNEMENT mc = new MACHINE_CONDITIONNEMENT();
+                    mc.MACHINE_CONDITIONNEMENT_CADENCE = d.cadence;
+                    mc.MACHINE_CONDITIONNEMENT_CHANGEMENT_OUTIL = d.changement_outil;
+
+                    context.MACHINE_CONDITIONNEMENT.Add(mc);
+
+                    Console.WriteLine("-------- Data Added : (" + data_counter + "/" + data.Count + ")");
+                    data_counter++;
+                }
+                context.SaveChanges();
+                Console.WriteLine("---- Initialize MACHINE_CONDITIONNEMENT Table : DONE ! ----");
+            }
+        }
+
+        /// <summary>
+        /// Initialize Oracle Database with Basic Data
+        /// </summary>
+        public static void Initialize_BaseData(bool? pauseOnEnd)
+        {
+            Initialize_VariantesData();
+            Initialize_ConditionnementData();
+            Initialize_TransportInfoData();
+            
+            Initialize_PaysData();
+            Initialize_BonbonData();
+            Initialize_Pays_RatioCommandes();
+            Initialize_CartonInfos();
+            Initialize_Recettes();
+            Initialize_PrixLots();
+
+            if (pauseOnEnd.Value)
+                Console.ReadKey(true);
+        }
         #endregion
     }
+
+
+
+
 }
+

@@ -6,16 +6,16 @@
     <edmx:Diagrams>
       <Diagram DiagramId="2ef5b7ae0d4e490daf236147f0d8855c" Name="Diagram1" ZoomLevel="83">
         <EntityTypeShape EntityType="PalaisDuBonbon_DataModel.BONBON" Width="1.5" PointX="5.25" PointY="5.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="PalaisDuBonbon_DataModel.CARTON" Width="1.5" PointX="9.75" PointY="8.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="PalaisDuBonbon_DataModel.CARTON_INFO" Width="1.5" PointX="0.75" PointY="2.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="PalaisDuBonbon_DataModel.COMMANDE" Width="1.5" PointX="8.25" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="PalaisDuBonbon_DataModel.CARTON" Width="3.75" PointX="9.75" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="PalaisDuBonbon_DataModel.CARTON_INFO" Width="3.625" PointX="0.75" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="PalaisDuBonbon_DataModel.COMMANDE" Width="2.75" PointX="8.25" PointY="3.875" IsExpanded="true" />
         <EntityTypeShape EntityType="PalaisDuBonbon_DataModel.CONDITIONNEMENT" Width="3.5" PointX="8.25" PointY="1.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="PalaisDuBonbon_DataModel.MACHINE_CONDITIONNEMENT" Width="1.5" PointX="6" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PalaisDuBonbon_DataModel.MACHINE_CONDITIONNEMENT" Width="3.875" PointX="4.125" PointY="0.5" IsExpanded="true" />
         <EntityTypeShape EntityType="PalaisDuBonbon_DataModel.MACHINE_FABRICATION" Width="3.75" PointX="0.5" PointY="5.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="PalaisDuBonbon_DataModel.PAY" Width="1.5" PointX="5.25" PointY="8.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="PalaisDuBonbon_DataModel.PRIX_LOT" Width="1.5" PointX="10.5" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="PalaisDuBonbon_DataModel.PAYS" Width="1.5" PointX="5.25" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="PalaisDuBonbon_DataModel.PRIX_LOT" Width="2.5" PointX="12.25" PointY="4.5" IsExpanded="true" />
         <EntityTypeShape EntityType="PalaisDuBonbon_DataModel.RECETTE" Width="1.5" PointX="0.75" PointY="8.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="PalaisDuBonbon_DataModel.TRANSPORT_INFO" Width="3.25" PointX="2.5" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="PalaisDuBonbon_DataModel.TRANSPORT_INFO" Width="3.25" PointX="0.5" PointY="0.5" IsExpanded="true" />
         <EntityTypeShape EntityType="PalaisDuBonbon_DataModel.VARIANTE" Width="1.5" PointX="5.375" PointY="2.75" IsExpanded="true" />
         <AssociationConnector Association="PalaisDuBonbon_DataModel.SYS_C007445" ManuallyRouted="false" />
         <AssociationConnector Association="PalaisDuBonbon_DataModel.SYS_C007450" ManuallyRouted="false" />
