@@ -1,0 +1,170 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="PalaisDuBonbon_DataModelStoreContainer" CdmEntityContainer="PalaisDuBonbonEntities">
+    <EntitySetMapping Name="BONBONs">
+      <EntityTypeMapping TypeName="PalaisDuBonbon_DataModel.BONBON">
+        <MappingFragment StoreEntitySet="BONBON">
+          <ScalarProperty Name="BONBON_ID" ColumnName="BONBON_ID" />
+          <ScalarProperty Name="BONBON_TYPE" ColumnName="BONBON_TYPE" />
+          <ScalarProperty Name="BONBON_TEXTURE" ColumnName="BONBON_TEXTURE" />
+          <ScalarProperty Name="BONBON_COULEUR" ColumnName="BONBON_COULEUR" />
+          <ScalarProperty Name="VARIANTE_ID" ColumnName="VARIANTE_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CARTONs">
+      <EntityTypeMapping TypeName="PalaisDuBonbon_DataModel.CARTON">
+        <MappingFragment StoreEntitySet="CARTON">
+          <ScalarProperty Name="CARTON_ID" ColumnName="CARTON_ID" />
+          <ScalarProperty Name="CARTON_QUANTITE_LOT" ColumnName="CARTON_QUANTITE_LOT" />
+          <ScalarProperty Name="CARTON_ID_GARE" ColumnName="CARTON_ID_GARE" />
+          <ScalarProperty Name="COMMANDE_ID" ColumnName="COMMANDE_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CARTON_INFO">
+      <EntityTypeMapping TypeName="PalaisDuBonbon_DataModel.CARTON_INFO">
+        <MappingFragment StoreEntitySet="CARTON_INFO">
+          <ScalarProperty Name="CARTON_INFO_ID" ColumnName="CARTON_INFO_ID" />
+          <ScalarProperty Name="CARTON_INFO_TYPE_CONDITIONNEMENT" ColumnName="CARTON_INFO_TYPE_CONDITIONNEMENT" />
+          <ScalarProperty Name="CARTON_INFO_QUANTITE" ColumnName="CARTON_INFO_QUANTITE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="COMMANDEs">
+      <EntityTypeMapping TypeName="PalaisDuBonbon_DataModel.COMMANDE">
+        <MappingFragment StoreEntitySet="COMMANDE">
+          <ScalarProperty Name="COMMANDE_QUANTITE" ColumnName="COMMANDE_QUANTITE" />
+          <ScalarProperty Name="COMMANDE_ID" ColumnName="COMMANDE_ID" />
+          <ScalarProperty Name="COMMANDE_NUM_COMMANDE" ColumnName="COMMANDE_NUM_COMMANDE" />
+          <ScalarProperty Name="COMMANDE_ETAT" ColumnName="COMMANDE_ETAT" />
+          <ScalarProperty Name="COMMANDE_DATE_COMMANDE" ColumnName="COMMANDE_DATE_COMMANDE" />
+          <ScalarProperty Name="COMMANDE_DATE_FABRICATION" ColumnName="COMMANDE_DATE_FABRICATION" />
+          <ScalarProperty Name="COMMANDE_DATE_CONDITIONNEMENT" ColumnName="COMMANDE_DATE_CONDITIONNEMENT" />
+          <ScalarProperty Name="COMMANDE_DATE_EXPEDITION" ColumnName="COMMANDE_DATE_EXPEDITION" />
+          <ScalarProperty Name="COMMANDE_PRIX_LOT" ColumnName="COMMANDE_PRIX_LOT" />
+          <ScalarProperty Name="COMMANDE_CARTON" ColumnName="COMMANDE_CARTON" />
+          <ScalarProperty Name="PAYS_ID" ColumnName="PAYS_ID" />
+          <ScalarProperty Name="BONBON_ID" ColumnName="BONBON_ID" />
+          <ScalarProperty Name="CONDITIONNEMENT_ID" ColumnName="CONDITIONNEMENT_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CONDITIONNEMENTs">
+      <EntityTypeMapping TypeName="PalaisDuBonbon_DataModel.CONDITIONNEMENT">
+        <MappingFragment StoreEntitySet="CONDITIONNEMENT">
+          <ScalarProperty Name="CONDITIONNEMENT_NOM" ColumnName="CONDITIONNEMENT_NOM" />
+          <ScalarProperty Name="CONDITIONNEMENT_ID" ColumnName="CONDITIONNEMENT_ID" />
+          <ScalarProperty Name="CONDITIONNEMENT_QUANTITE_MAX" ColumnName="CONDITIONNEMENT_QUANTITE_MAX" />
+          <ScalarProperty Name="MACHINE_CONDITIONNEMENT_ID" ColumnName="MACHINE_CONDITIONNEMENT_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MACHINE_CONDITIONNEMENT">
+      <EntityTypeMapping TypeName="PalaisDuBonbon_DataModel.MACHINE_CONDITIONNEMENT">
+        <MappingFragment StoreEntitySet="MACHINE_CONDITIONNEMENT">
+          <ScalarProperty Name="MACHINE_CONDITIONNEMENT_ID" ColumnName="MACHINE_CONDITIONNEMENT_ID" />
+          <ScalarProperty Name="MACHINE_CONDITIONNEMENT_CADENCE" ColumnName="MACHINE_CONDITIONNEMENT_CADENCE" />
+          <ScalarProperty Name="MACHINE_CONDITIONNEMENT_CHANGEMENT_OUTIL" ColumnName="MACHINE_CONDITIONNEMENT_CHANGEMENT_OUTIL" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MACHINE_FABRICATION">
+      <EntityTypeMapping TypeName="PalaisDuBonbon_DataModel.MACHINE_FABRICATION">
+        <MappingFragment StoreEntitySet="MACHINE_FABRICATION">
+          <ScalarProperty Name="MACHINE_FABRICATION_ID" ColumnName="MACHINE_FABRICATION_ID" />
+          <ScalarProperty Name="MACHINE_FABRICATION_CHANGEMENT_OUTIL" ColumnName="MACHINE_FABRICATION_CHANGEMENT_OUTIL" />
+          <ScalarProperty Name="MACHINE_FABRICATION_CADENCE" ColumnName="MACHINE_FABRICATION_CADENCE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PAYS">
+      <EntityTypeMapping TypeName="PalaisDuBonbon_DataModel.PAYS">
+        <MappingFragment StoreEntitySet="PAYS">
+          <ScalarProperty Name="PAYS_RATIO_COMMANDE" ColumnName="PAYS_RATIO_COMMANDE" />
+          <ScalarProperty Name="RATIO_COMMANDE" ColumnName="RATIO_COMMANDE" />
+          <ScalarProperty Name="PAYS_ID" ColumnName="PAYS_ID" />
+          <ScalarProperty Name="PAYS_NOM" ColumnName="PAYS_NOM" />
+          <ScalarProperty Name="PAYS_TRANSPORT" ColumnName="PAYS_TRANSPORT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PRIX_LOT">
+      <EntityTypeMapping TypeName="PalaisDuBonbon_DataModel.PRIX_LOT">
+        <MappingFragment StoreEntitySet="PRIX_LOT">
+          <ScalarProperty Name="PRIX_LOT_ID" ColumnName="PRIX_LOT_ID" />
+          <ScalarProperty Name="PRIX_LOT_PRIX" ColumnName="PRIX_LOT_PRIX" />
+          <ScalarProperty Name="BONBON_ID" ColumnName="BONBON_ID" />
+          <ScalarProperty Name="CONDITIONNEMENT_ID" ColumnName="CONDITIONNEMENT_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RECETTEs">
+      <EntityTypeMapping TypeName="PalaisDuBonbon_DataModel.RECETTE">
+        <MappingFragment StoreEntitySet="RECETTE">
+          <ScalarProperty Name="RECETTE_ID" ColumnName="RECETTE_ID" />
+          <ScalarProperty Name="RECETTE_TYPE" ColumnName="RECETTE_TYPE" />
+          <ScalarProperty Name="RECETTE_ADDITIF" ColumnName="RECETTE_ADDITIF" />
+          <ScalarProperty Name="RECETTE_ENROBAGE" ColumnName="RECETTE_ENROBAGE" />
+          <ScalarProperty Name="RECETTE_GELIFIANT" ColumnName="RECETTE_GELIFIANT" />
+          <ScalarProperty Name="RECETTE_AROME" ColumnName="RECETTE_AROME" />
+          <ScalarProperty Name="RECETTE_SUCRE" ColumnName="RECETTE_SUCRE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TRANSPORT_INFO">
+      <EntityTypeMapping TypeName="PalaisDuBonbon_DataModel.TRANSPORT_INFO">
+        <MappingFragment StoreEntitySet="TRANSPORT_INFO">
+          <ScalarProperty Name="TRANSPORT_INFO_ID" ColumnName="TRANSPORT_INFO_ID" />
+          <ScalarProperty Name="TRANSPORT_INFO_TYPE_TRANSPORT" ColumnName="TRANSPORT_INFO_TYPE_TRANSPORT" />
+          <ScalarProperty Name="TRANSPORT_INFO_QUANTITE_PALETTE" ColumnName="TRANSPORT_INFO_QUANTITE_PALETTE" />
+          <ScalarProperty Name="TRANSPORT_INFO_CARTON_PAR_PALETTE" ColumnName="TRANSPORT_INFO_CARTON_PAR_PALETTE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VARIANTEs">
+      <EntityTypeMapping TypeName="PalaisDuBonbon_DataModel.VARIANTE">
+        <MappingFragment StoreEntitySet="VARIANTE">
+          <ScalarProperty Name="VARIANTE_ID" ColumnName="VARIANTE_ID" />
+          <ScalarProperty Name="VARIANTE_NOM" ColumnName="VARIANTE_NOM" />
+          <ScalarProperty Name="MACHINE_FABRICATION_ID" ColumnName="MACHINE_FABRICATION_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TAUX_VENTES">
+      <EntityTypeMapping TypeName="PalaisDuBonbon_DataModel.TAUX_VENTES">
+        <MappingFragment StoreEntitySet="TAUX_VENTES">
+          <ScalarProperty Name="TAUX_VENTE_VALEUR" ColumnName="TAUX_VENTE_VALEUR" />
+          <ScalarProperty Name="TAUX_VENTE_ANNEE" ColumnName="TAUX_VENTE_ANNEE" />
+          <ScalarProperty Name="TAUX_VENTE_BONBON" ColumnName="TAUX_VENTE_BONBON" />
+          <ScalarProperty Name="TAUX_VENTE_ID" ColumnName="TAUX_VENTE_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="COUTS">
+      <EntityTypeMapping TypeName="PalaisDuBonbon_DataModel.COUT">
+        <MappingFragment StoreEntitySet="COUTS">
+          <ScalarProperty Name="COUT_GENERAL" ColumnName="COUT_GENERAL" />
+          <ScalarProperty Name="COUT_EXPEDITION" ColumnName="COUT_EXPEDITION" />
+          <ScalarProperty Name="COUT_CONDITIONNEMENT" ColumnName="COUT_CONDITIONNEMENT" />
+          <ScalarProperty Name="COUT_FABRICATION" ColumnName="COUT_FABRICATION" />
+          <ScalarProperty Name="COUT_TYPE_BONBON" ColumnName="COUT_TYPE_BONBON" />
+          <ScalarProperty Name="COUT_ID" ColumnName="COUT_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PERF_COMMANDES">
+      <EntityTypeMapping TypeName="PalaisDuBonbon_DataModel.PERF_COMMANDES">
+        <MappingFragment StoreEntitySet="PERF_COMMANDES">
+          <ScalarProperty Name="PERF_MACHINE_CONDITIONNEMENT_ID" ColumnName="PERF_MACHINE_CONDITIONNEMENT_ID" />
+          <ScalarProperty Name="PERF_MACHINE_FABRICATION_ID" ColumnName="PERF_MACHINE_FABRICATION_ID" />
+          <ScalarProperty Name="BONBON_FABRIQUE_COUNT" ColumnName="BONBON_FABRIQUE_COUNT" />
+          <ScalarProperty Name="TEMPS_CONDITIONNEMENT" ColumnName="TEMPS_CONDITIONNEMENT" />
+          <ScalarProperty Name="TEMPS_FABRICATION_LOT" ColumnName="TEMPS_FABRICATION_LOT" />
+          <ScalarProperty Name="COMMANDE_ID" ColumnName="COMMANDE_ID" />
+          <ScalarProperty Name="PERF_ID" ColumnName="PERF_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

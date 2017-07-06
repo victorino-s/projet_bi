@@ -1,1 +1,0 @@
-D:\_sources\public\exia\projet_bi\a3_bi_project_generator\a3_bi_project\projet_bi_generator_v2\bin\Debug\projet_bi_generator_v2.exe.config

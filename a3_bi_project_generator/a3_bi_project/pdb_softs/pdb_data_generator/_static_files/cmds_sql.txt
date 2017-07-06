@@ -1,0 +1,26 @@
+supprimer table commande {
+
+alter table commande disable constraint SYS_C007451;
+
+alter table commande disable constraint SYS_C007450;
+
+alter table commande disable constraint SYS_C007449;
+
+alter table commande disable constraint SYS_C007436;
+
+alter table commande disable constraint CHK_BOOLEAN_COMMANDE_ETAT;
+alter table commande disable constraint COMMANDE_PK;
+alter
+truncate commande;
+select * from all_constraints where table_name='COMMANDE';
+alter table commande enable constraint SYS_C007451;
+
+alter table commande enable constraint SYS_C007450;
+
+alter table commande enable constraint SYS_C007449;
+
+alter table commande enable constraint SYS_C007452;
+
+alter table commande enable constraint SYS_C007565;
+
+}

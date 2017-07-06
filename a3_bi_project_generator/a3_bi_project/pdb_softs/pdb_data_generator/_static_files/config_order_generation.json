@@ -1,0 +1,8 @@
+﻿{
+  "nb_commandes": 50,
+  "lots_min": 1,
+  "lots_max": 30,
+  "useRandom_countries": false,
+  "useRandom_candies": false,
+  "generation_fabrication_data_date":  2016
+}
